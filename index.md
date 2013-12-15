@@ -5,7 +5,7 @@
     <th>Session</th><th>Resources</th>
   </tr>
   <tr>
-    <td>Monday</td><td>[The Link](monday-morning.md)</td>
+    <td>Monday</td><td>[The Link](./monday-morning.md)</td>
   </tr>
   <tr>
     <td>Tuesday</td><td>Barn</td>
