@@ -2,4 +2,28 @@
 Reference list
 ==============
 
-Foo!
+Looking at 16S and whole transcriptome:
+
+   Radax R, Rattei T, Lanzen A, Bayer C, Rapp HT, Urich T, Schleper C (2012)
+   Metatranscriptomics of the marine sponge Geodia barretti: tackling phylogeny and
+   function of its microbial community. Environmental Microbiology 14(5):
+   1308-1324. doi: 10.1111/j.1462-2920.2012.02714.x.
+
+Assembling symbiont communities with digital normalization:
+
+   K Goffredi S, Yi H, Zhang Q, Klann JE, Struve IA, Vrijenhoek RC, Brown CT.
+   Genomic versatility and functional variation between two dominant heterotrophic
+   symbionts of deep-sea Osedax worms. ISME J. 2013 Nov 14. doi: 10.1038/ismej.2013.201.
+
+Assembling messy eukaryotic genomes with digital normalization:
+
+   Schwarz EM, Korhonen PK, Campbell BE, Young ND, Jex AR, Jabbar A, Hall RS,
+   Mondal A, Howe AC, Pell J, Hofmann A, Boag PR, Zhu XQ, Gregory TR, Loukas A,
+   Williams BA, Antoshechkin I, Brown CT, Sternberg PW, Gasser RB. The genome and
+   developmental transcriptome of the strongylid nematode Haemonchus contortus.
+   Genome Biol. 2013 Aug 28;14(8):R89.
+
+Assembling soil with partitioning and digital normalization:
+
+   Assembling large, complex environmental genomes.  Howe et al.,
+   arXiv (http://arxiv.org/abs/1212.2832).
