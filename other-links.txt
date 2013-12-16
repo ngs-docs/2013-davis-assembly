@@ -2,6 +2,16 @@
 Other links
 ===========
 
+How to pronounce "De Bruijn":
+
+   http://thegenomefactory.blogspot.com.au/2013/08/how-to-pronounce-de-bruijn.html
+
+   http://www.biostars.org/p/7186/
+
+Adaptor trim or die: Nextera libraries & trimming (by Nick Loman)
+
+   http://pathogenomics.bham.ac.uk/blog/2013/04/adaptor-trim-or-die-experiences-with-nextera-libraries/
+
 The khmer protocols: assembling & annotating mRNAseq and metagenomes in the cloud
 
    http://khmer-protocols.readthedocs.org

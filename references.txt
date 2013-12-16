@@ -59,3 +59,9 @@ Using chromatin interactions data (Hi-C) for scaffolding assemblies:
    Chromosome-scale scaffolding of de novo genome assemblies based on chromatin interactions http://www.nature.com/nbt/journal/vaop/ncurrent/full/nbt.2727.html
 
    High-throughput genome scaffolding from in vivo DNA interaction frequency http://www.nature.com/nbt/journal/vaop/ncurrent/full/nbt.2768.html
+
+
+Trimming/filtering references:
+
+  On the optimal trimming of high-throughput mRNA sequence data. MacManes.
+  http://biorxiv.org/content/early/2013/11/14/000422

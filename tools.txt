@@ -2,4 +2,11 @@
 Tools
 =====
 
-Bar!
+Coral, error correction that uses Illumina to correct 454:
+
+  http://www.cs.helsinki.fi/u/lmsalmel/coral/
+
+Kraken, de novo adapter discovery:
+
+  http://biorxiv.org/content/early/2013/11/14/000422
+
