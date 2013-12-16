@@ -13,3 +13,8 @@ Kraken, de novo adapter discovery:
 SSPACE for scaffolding:
 
   http://www.baseclear.com/landingpages/basetools-a-wide-range-of-bioinformatics-solutions/sspacev12/
+
+BESST for scaffolding:
+
+  https://github.com/ksahlin/BESST
+
