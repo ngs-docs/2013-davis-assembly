@@ -32,3 +32,23 @@ Assembling soil with partitioning and digital normalization:
 
    Assembling large, complex environmental genomes.  Howe et al.,
    arXiv (http://arxiv.org/abs/1212.2832).
+
+Variant calling (including structural variants):
+
+   Iqbal Z, Caccamo M, Turner I, Flicek P, McVean G. De novo assembly and
+   genotyping of variants using colored de Bruijn graphs. Nat Genet. 2012 Jan
+   8;44(2):226-32. doi: 10.1038/ng.1028. PubMed PMID: 22231483; PubMed Central
+   PMCID: PMC3272472.
+
+   Iqbal Z, Turner I, McVean G. High-throughput microbial population genomics
+   using the Cortex variation assembler. Bioinformatics. 2013 Jan 15;29(2):275-6.
+   doi: 10.1093/bioinformatics/bts673. Epub 2012 Nov 19. PubMed PMID: 23172865;
+   PubMed Central PMCID: PMC3546798.
+
+   Leggett RM, Ramirez-Gonzalez RH, Verweij W, Kawashima CG, Iqbal Z, Jones JD,
+   Caccamo M, Maclean D. Identifying and classifying trait linked polymorphisms in
+   non-reference species by walking coloured de bruijn graphs. PLoS One.
+   2013;8(3):e60058. doi: 10.1371/journal.pone.0060058. Epub 2013 Mar 25. PubMed
+   PMID: 23536903; PubMed Central PMCID: PMC3607606.
+
+

@@ -16,5 +16,6 @@ Jared Simpson.
    references
    tools
    other-links
+   titus-notes
 
 .. @@ supported by!

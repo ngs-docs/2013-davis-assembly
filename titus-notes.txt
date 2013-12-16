@@ -1,0 +1,57 @@
+================================
+Notes on using khmer to do stuff
+================================
+
+Software
+========
+
+You'll need khmer and screed installed::
+
+   pip install khmer
+   pip install screed
+
+We'll be using the `khmer command line scripts
+<http://khmer.readthedocs.org/en/latest/scripts.html>`__.
+
+0. Assembling mRNAseq and metagenome data in the cloud
+======================================================
+
+See `Eel Pond mRNAseq assembly protocol
+<https://khmer-protocols.readthedocs.org/en/v0.8.3/mrnaseq/index.html>`__
+and `Kalamazoo metagenome assembly protocols
+<https://khmer-protocols.readthedocs.org/en/v0.8.3/metagenomics/index.html>`__.
+
+1. Generating a saturation curve for shotgun data
+=================================================
+
+You can use normalize-by-median.py to assess information saturation in your
+shotgun data::
+
+   normalize-by-median.py -k 20 -C 5 -x 2e9 -N 4 -R report.txt <FASTA/FASTQ/GZ/BZ2 files>
+
+Note that the '-x' and '-N' parameters should multiple to be under the total
+amount of data in your data set.
+
+'report.txt' column 1 will then contain the number of reads examined,
+and column 2 will contain the number of reads kept.  When this levels
+off, you've saturated to a coverage of 5.
+
+2. Estimating genomic richness/non-repetitive genome content
+============================================================
+
+You can use the three-pass assembly protocol (see `Kalamazoo <https://khmer-protocols.readthedocs.org/en/v0.8.3/metagenomics/index.html>`__) 
+
+   normalize-by-median.py -k 20 -C 20 -x 2e9 -N 4 --savehash C20.kh <FASTA/FASTQ/GZ/BZ2 files>
+   filter-abund.py --loadhash C20.kh *.keep
+   normalize-by-median.py -k 20 -C 5 -x 2e9 -N 4 *.keep.abundfilt
+
+Finally, get the complete stats on the remaining reads::
+
+   /usr/local/share/khmer/sandbox/readstats.py *.keep.abundfilt.keep
+
+Divide the total number of bases remaining by 5 and you'll have an estimate
+of your total genome size.  (Technically, the total number of nodes in
+your De Bruijn graph. :)
+
+3. Generating an error profile for individual shotgun reads
+===========================================================
