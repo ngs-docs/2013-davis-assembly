@@ -35,7 +35,7 @@ extensions = ['sphinx.ext.mathjax']
 templates_path = ['_templates']
 
 # The suffix of source filenames.
-source_suffix = '.rst'
+source_suffix = '.txt'
 
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
@@ -44,8 +44,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'labibi'
-copyright = u'2012, C. Titus Brown'
+project = u'2013-davis-assembly'
+copyright = u'2013, Holly Bik, C. Titus Brown, Nick Loman, Lex Nederbragt, Jared Simpson'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -175,10 +175,10 @@ htmlhelp_basename = 'labibidoc'
 # Various settings to pass to templates:
 
 html_context = {
-   "google_analytics_id" : 'UA-36028965-1',
-   "disqus_shortname" : 'labibi',
-   "github_base_account" : 'ctb',
-   "github_project" : 'labibi',
+   "google_analytics_id" : '',
+   "disqus_shortname" : '',
+   "github_base_account" : 'ngs-docs',
+   "github_project" : '2013-davis-assembly',
 }
 
 
