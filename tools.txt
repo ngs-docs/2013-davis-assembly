@@ -10,3 +10,6 @@ Kraken, de novo adapter discovery:
 
   http://biorxiv.org/content/early/2013/11/14/000422
 
+SSPACE for scaffolding:
+
+  http://www.baseclear.com/landingpages/basetools-a-wide-range-of-bioinformatics-solutions/sspacev12/

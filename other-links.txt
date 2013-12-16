@@ -17,3 +17,7 @@ The khmer protocols: assembling & annotating mRNAseq and metagenomes in the clou
    http://khmer-protocols.readthedocs.org
 
    (`Blog post <http://ivory.idyll.org/blog/announcing-khmer-protocols.html>`__)
+
+How much sequencing is needed for ...? (Titus Brown)
+
+    http://ivory.idyll.org/blog/how-much-sequencing-is-needed.html
