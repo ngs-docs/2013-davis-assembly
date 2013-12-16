@@ -10,6 +10,10 @@ You'll need khmer and screed installed::
    pip install khmer
    pip install screed
 
+You will also need the khmer repository for some of the sandbox scripts::
+
+   git clone https://github.com/ged-lab/khmer.git -b master 
+
 We'll be using the `khmer command line scripts
 <http://khmer.readthedocs.org/en/latest/scripts.html>`__.
 
@@ -39,7 +43,7 @@ off, you've saturated to a coverage of 5.
 2. Estimating genomic richness/non-repetitive genome content
 ============================================================
 
-You can use the three-pass assembly protocol (see `Kalamazoo <https://khmer-protocols.readthedocs.org/en/v0.8.3/metagenomics/index.html>`__) 
+You can use the three-pass assembly protocol (see `Kalamazoo <https://khmer-protocols.readthedocs.org/en/v0.8.3/metagenomics/index.html>`__) ::
 
    normalize-by-median.py -k 20 -C 20 -x 2e9 -N 4 --savehash C20.kh <FASTA/FASTQ/GZ/BZ2 files>
    filter-abund.py --loadhash C20.kh *.keep
@@ -47,11 +51,31 @@ You can use the three-pass assembly protocol (see `Kalamazoo <https://khmer-prot
 
 Finally, get the complete stats on the remaining reads::
 
-   /usr/local/share/khmer/sandbox/readstats.py *.keep.abundfilt.keep
+   python /path/to/khmer/sandbox/readstats.py *.keep.abundfilt.keep
 
 Divide the total number of bases remaining by 5 and you'll have an estimate
 of your total genome size.  (Technically, the total number of nodes in
 your De Bruijn graph. :)
 
-3. Generating an error profile for individual shotgun reads
+3. Generating a coverage plot/coverage spectrum without a reference
+===================================================================
+
+First, load all the k-mers in the data set into a counting file::
+
+   load-into-counting.py -k 20 -C 20 -x 2e9 -N 4 counts.kh reads.fq
+
+Then calculate the spectrum of read coverages::
+
+   python /path/to/khmer/sandbox/calc-median-distribution.py counts.kh reads.fq reads.hist
+
+4. Generating an error profile for individual shotgun reads
 ===========================================================
+
+For this, you'll need to use the kmer_error_profile branch::
+
+   git clone https://github.com/ged-lab/khmer.git -b kmer_error_profile
+   cd khmer && make all
+
+and now run the calc-error-profile.py script::
+
+   /path/to/khmer/scripts/calc-error-profile.py reads.fq
