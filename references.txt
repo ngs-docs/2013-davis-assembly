@@ -2,6 +2,11 @@
 Reference list
 ==============
 
+
+General references
+
+   NGS wikibook: http://en.wikibooks.org/wiki/Next_Generation_Sequencing_(NGS)
+
 Looking at 16S and whole transcriptome:
 
    Radax R, Rattei T, Lanzen A, Bayer C, Rapp HT, Urich T, Schleper C (2012)
