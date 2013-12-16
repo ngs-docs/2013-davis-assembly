@@ -52,3 +52,10 @@ Variant calling (including structural variants):
    PMID: 23536903; PubMed Central PMCID: PMC3607606.
 
 
+
+
+Using chromatin interactions data (Hi-C) for scaffolding assemblies:
+
+   Chromosome-scale scaffolding of de novo genome assemblies based on chromatin interactions http://www.nature.com/nbt/journal/vaop/ncurrent/full/nbt.2727.html
+
+   High-throughput genome scaffolding from in vivo DNA interaction frequency http://www.nature.com/nbt/journal/vaop/ncurrent/full/nbt.2768.html
