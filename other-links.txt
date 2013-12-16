@@ -2,4 +2,8 @@
 Other links
 ===========
 
-Blogs etc.
+The khmer protocols: assembling & annotating mRNAseq and metagenomes in the cloud
+
+   http://khmer-protocols.readthedocs.org
+
+   (`Blog post <http://ivory.idyll.org/blog/announcing-khmer-protocols.html>`__)
