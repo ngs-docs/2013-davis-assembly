@@ -6,6 +6,7 @@ Reference list
 General references
 
    NGS wikibook: http://en.wikibooks.org/wiki/Next_Generation_Sequencing_(NGS)
+   NGS field guide http://www.molecularecologist.com/next-gen-fieldguide-2013
 
 Looking at 16S and whole transcriptome:
 
