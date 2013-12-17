@@ -5,13 +5,14 @@ Metagenomics assemblies with Ray
 --------------------------------
 
 Ray is a particularly interesting genome assembler due to several
-unusual features: - It can scale to arbitrary numbers of processors and
-machines by distributing its assembly graph - It has several functions
-specific to metagenome assembly 'Ray Meta' - It's author, ``sebhtml`` is
-incredibly responsive on Twitter :) - It will happily mix input from
-several different sequencing techniques - If run with the
-``write-kmers`` option enabled, the resulting assembly graph may be
-viewed using the separate Ray Cloud Browser software
+unusual features:
+
+- It can scale to arbitrary numbers of processors and
+machines by distributing its assembly graph
+- It has several functions specific to metagenome assembly 'Ray Meta'
+- Ray's author, ``@sebhtml`` is incredibly responsive on Twitter :)
+- Ray will happily mix input from several different sequencing techniques, e.g. Illumina and 454
+- If run with the ``write-kmers`` option enabled, the resulting assembly graph may be viewed using the separate Ray Cloud Browser software
 
 Installing Ray
 --------------
