@@ -1,0 +1,85 @@
+Metagenomics Practical
+======================
+
+Metagenomics assemblies with Ray
+--------------------------------
+
+Ray is a particularly interesting genome assembler due to several
+unusual features: - It can scale to arbitrary numbers of processors and
+machines by distributing its assembly graph - It has several functions
+specific to metagenome assembly 'Ray Meta' - It's author, ``sebhtml`` is
+incredibly responsive on Twitter :) - It will happily mix input from
+several different sequencing techniques - If run with the
+``write-kmers`` option enabled, the resulting assembly graph may be
+viewed using the separate Ray Cloud Browser software
+
+Installing Ray
+--------------
+
+Dependencies
+~~~~~~~~~~~~
+
+::
+
+    sudo apt-get install build-essential
+    sudo apt-get install git
+    sudo apt-get install openmpi1.6-bin openmpi1.6-common libopenmpi1.6-dev
+
+Installing Ray from source code
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+    git clone https://github.com/sebhtml/ray
+    git clone https://github.com/sebhtml/RayPlatform
+
+    Edit the Makefile in ray/ to add LIBZ support and increase maximum k-mer size to 64:
+    HAVE_LIBZ = y
+    MAXKMERLENGTH = 64
+
+    cd ray
+    make
+
+You can add this to your PATH:
+
+::
+
+    export PATH=$PATH:`pwd`
+
+A simple command-line for multi-processor execution:
+
+For paired-end reads:
+
+::
+
+    mpirun -np 16 Ray -k 31 -p pair1.fastq.gz pair2.fastq.gz -o output_directory
+
+For interleaved paired-end reads:
+
+::
+
+    mpirun -np 16 Ray -k 31 -i pairs.fastq.gz -o output_directory
+
+For single-end reads:
+
+::
+
+    mpirun -np 16 Ray -k 31 -s reads.fastq.gz -o output_directory
+
+If you want to run Ray Cloud Browser, you will want the ``-write-kmers``
+option:
+
+::
+
+    mpirun -np 16 Ray -write-kmers -k 31 -p pair1.fastq.gz pair2.fastq.gz -o output directory
+
+If you run via a cluster, i.e. StarCluster, mpirun can be set to execute
+on multiple machines, e.g.:
+
+::
+
+    mpirun -np 16 -H host1,host2,host3,host4 -k 31 -p pair1.fastq.gz pair2.fastq.gz -o x
+
+For more command-line options, see:
+
+https://github.com/sebhtml/ray/blob/master/MANUAL\_PAGE.txt

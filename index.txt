@@ -17,5 +17,6 @@ Jared Simpson.
    tools
    other-links
    titus-notes
+   ray-assembly
 
 .. @@ supported by!
