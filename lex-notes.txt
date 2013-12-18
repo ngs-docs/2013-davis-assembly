@@ -81,6 +81,13 @@ Do::
    pip install biopython
    pip install pysam
 
+Install R
+---------
+
+Do::
+
+   apt-get install r-base
+
 Install scaffoldgap2bed
 -----------------------
 
