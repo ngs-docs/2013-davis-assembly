@@ -24,6 +24,6 @@ Jared Simpson.
 Other references:
 -----------------
 
-`Starting up an EC2 instances <http://khmer-protocols.readthedocs.org/en/latest/amazon/index.html>`__
+`Starting up an EC2 instance <http://khmer-protocols.readthedocs.org/en/latest/amazon/index.html>`__
 
 .. @@ supported by!

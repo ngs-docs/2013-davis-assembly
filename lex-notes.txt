@@ -45,6 +45,7 @@ Do::
 
    cd /root
    git clone https://github.com/vezzi/FRC_align
+   cd FRC_align
    cd src/samtools;
    make
    cd ..
@@ -91,12 +92,12 @@ Practicals handouts
 
 Use the following practicals from https://github.com/lexnederbragt/INF-BIO9120_fall2013_de_novo_assembly/tree/master/practicals
 
-02_Mapping_reads_to_an_assembly
+`Mapping reads to an assembly <https://github.com/lexnederbragt/INF-BIO9120_fall2013_de_novo_assembly/tree/master/practicals/02_Mapping_reads_to_an_assembly>`
 
-05_Evaluating_assemblies_with_FRCbam
+`Evaluating assemblies with FRCbam <https://github.com/lexnederbragt/INF-BIO9120_fall2013_de_novo_assembly/tree/master/practicals/05_Evaluating_assemblies_with_FRCbam>`__
 
-08_Assembly_improvement_using_REAPR
+`Assembly improvement using REAPR <https://github.com/lexnederbragt/INF-BIO9120_fall2013_de_novo_assembly/tree/master/practicals/08_Assembly_improvement_using_REAPR>`__
 
-Note that you'll have to adjust file paths
-and we're skipping a few things (e.g. SNP calling)
+Note that you'll have to adjust file paths and we're skipping a few
+things (e.g. SNP calling)
 
