@@ -94,7 +94,7 @@ Create a new volume based on snapshot `snap-78cf1764` and attach it to your runn
 ::
 
 	mkdir /data2
-	mount /dev/xdvf /data2
+	mount /dev/xvdf /data2
 
 Practicals handouts
 -------------------
