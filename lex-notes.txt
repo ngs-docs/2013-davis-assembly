@@ -87,6 +87,11 @@ do::
    curl -O https://raw.github.com/lexnederbragt/sequencetools/master/scaffoldgap2bed.py
 
 
+Mount the data instance
+-------------------
+Instructions coming...
+
+
 Practicals handouts
 -------------------
 
