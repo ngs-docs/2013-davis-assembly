@@ -118,3 +118,10 @@ Use the following practicals from https://github.com/lexnederbragt/INF-BIO9120_f
 Note that you'll have to adjust file paths and we're skipping a few
 things (e.g. SNP calling)
 
+---
+
+To connect to the IPython Notebook interface, connect to
+
+   https://ec2-machine-name
+
+(ignore/accept the security warning) and use the password 'beacon'.
