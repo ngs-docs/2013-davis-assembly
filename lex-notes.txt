@@ -86,6 +86,15 @@ do::
    cd /usr/local/bin
    curl -O https://raw.github.com/lexnederbragt/sequencetools/master/scaffoldgap2bed.py
 
+Data files
+----------
+
+Create a new volume based on snapshot `snap-78cf1764` and attach it to your running instance via the Amazon EC2 management interface. When it is attached, remember the partition (e.g. sdf is `xvdf`) and mount like:
+
+::
+
+	mkdir /data2
+	mount /dev/xdvf /data2
 
 Practicals handouts
 -------------------
