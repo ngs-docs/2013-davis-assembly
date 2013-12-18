@@ -1,6 +1,6 @@
-=========
-Lex Notes
-=========
+============================
+Assembly QC software install
+============================
 
 Enable HTTPS in the security group.
 
