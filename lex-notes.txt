@@ -71,6 +71,7 @@ Do::
    perl -MCPAN -e 'install File::Spec::Link'
 
    ./install.sh
+   ln -s /root/Reapr_1.0.16/reapr /usr/local/bin/reapr
 
 Install Python modules
 -----------------
