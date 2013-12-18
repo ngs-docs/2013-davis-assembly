@@ -19,6 +19,11 @@ Also see the paper:
 
     Sujai Kumar, Martin Jones, Georgios Koutsovoulos, Michael Clarke and Mark Blaxter Blobology: exploring raw genome data for contaminants, symbionts, and parasites using taxon-annotated GC-coverage plots  doi: 10.3389/fgene.2013.00237  http://www.frontiersin.org/Journal/10.3389/fgene.2013.00237/abstract
 
+Although this tutorial uses the assemblage github repository, the repository for this paper is at https://github.com/blaxterlab/blobology
+The scripts at blaxterlab/blobology can be easier to use if you already have bam or coverage files.
+
+https://github.com/sujaikumar/assemblage also has other scripts/workflows relevant to genome assembly, annotation, finding conserved non-coding elements, etc.
+
 Also please see Sujai Kumar's recent presentation at Beatles and
 Bioinformatics:
 
