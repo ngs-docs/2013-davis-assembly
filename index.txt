@@ -19,5 +19,6 @@ Jared Simpson.
    titus-notes
    ray-assembly
    lex-notes
+   blobology
 
 .. @@ supported by!

@@ -1,0 +1,139 @@
+Blobology
+---------
+
+The steps for generating taxon-associated 'blob' plots are as follows:
+
+-  Generate a subset of contigs (for very big assemblies)
+-  Perform rough taxonomic assignment (e.g. using BLASTN against NCBI's
+   ``nt`` database)
+-  Map reads back to contigs (e.g. using Bowtie2 or BWA)
+-  Generate a file with GC, taxon and coverage data for plotting
+-  Plot graph in R
+
+Full instructions for running Blobology and more advanced usage can be
+found at:
+
+https://github.com/sujaikumar/assemblage
+
+Also see the paper:
+
+::
+
+    Sujai Kumar, Martin Jones, Georgios Koutsovoulos, Michael Clarke and Mark Blaxter Blobology: exploring raw genome data for contaminants, symbionts, and parasites using taxon-annotated GC-coverage plots  doi: 10.3389/fgene.2013.00237  http://www.frontiersin.org/Journal/10.3389/fgene.2013.00237/abstract
+
+Also please see Sujai Kumar's recent presentation at Beatles and
+Bioinformatics:
+
+http://www.youtube.com/watch?v=tSul\_qDwvN4&t=3h10m50s
+
+Installing dependencies
+~~~~~~~~~~~~~~~~~~~~~~~
+
+BLAST+ for taxonomic assignment
+
+::
+
+    sudo apt-get install ncbi-blast+
+
+Install R and required packages
+
+::
+
+    sudo apt-get install r-base-core
+    R
+    install.packages(c("ggplot2"))
+
+These dependencies have already been installed on AMI public snaphshot:
+``ami-222222`` so if you mount this snapshot as a volume you can skip
+these steps.
+
+We will use seqtk for subsampling contigs (can also be used for reads)
+
+::
+
+    git clone https://github.com/lh3/seqtk.git
+    cd seqtk; make; cd ..
+
+Bowtie2 for read mapping
+
+::
+
+    sudo apt-get install bwa
+
+Sujai Kumar's Assemblage for the scripts we need:
+
+::
+
+    git clone https://github.com/sujaikumar/assemblage
+
+The NCBI nt files, plus taxonomy information
+
+::
+
+    wget ftp://ftp.ncbi.nih.gov/blast/db/nt.??.tar.gz
+    wget ftp://ftp.ncbi.nih.gov/pub/taxonomy/gi_taxid_nucl.dmp.gz
+    wget ftp://ftp.ncbi.nih.gov/pub/taxonomy/taxdump.tar.gz
+
+Running blobology
+~~~~~~~~~~~~~~~~~
+
+Assume you have a contig file from your assembly called 'contigs.fasta'
+
+First, subsample 10,000 contigs from the file:
+
+::
+
+    seqtk sample contigs.fasta 10000 > contigs_10000.fasta
+
+BLAST the reads
+
+::
+
+    blastn -task megablast -query contigs_10000.fasta -db blast/nt -max_target_seqs 1 -outfmt 6 > contigs_10000.megablast.nt
+
+Produce a taxonomy file
+
+::
+
+    blast_taxonomy_report.pl \
+    -b contigs_10000.megablast.nt \
+    -nodes tax/nodes.dmp \
+    -names tax/names.dmp \
+    -gi_taxid_file tax/gi_taxid_nucl.dmp.gz \
+    -t genus=1 -t order=1 -t family=1 -t superfamily=1 -t kingdom=1 \
+    >contigs_10000.megablast.nt.taxon
+
+Create a database of your contigs for BWA
+
+::
+
+    bwa index contigs.fasta
+
+Align the reads you used to make the assembly to the contigs database
+
+::
+
+    bwa mem contigs.fasta pair1.fasta.gz pair2.fasta.gz > samfile
+
+Create a file with coverage and GC information, this will be named
+according to your samfile name
+
+::
+
+    sam_len_cov_gc_insert.pl -s samfile -f contigs.fasta
+
+    cat contigs_10000.megablast.nt.taxon samfile.lencovgc.txt | 
+    perl -anF"\t" -e '
+        chomp;
+        /^(\S+).*\torder\t([^\t]+)/ and $o{$1} = $2 and next;
+        if ($F[2] =~ /^\d+$/ ) { print "$_\t" . (exists $o{$F[1]} ? $o{$F[1]} : "Not annotated") . "\n" }
+    ' >> lencovgc.taxon
+
+Create the blobology plot
+
+::
+
+    Rscript --vanilla ../bin/assemblage/blobology.R lencovgc.taxon 0.005 1 2
+
+The final file is called lencovgc.taxon.png - you will need to download
+this to view it.
