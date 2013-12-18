@@ -43,9 +43,11 @@ Install R and required packages
     R
     install.packages(c("ggplot2"))
 
-These dependencies have already been installed on AMI public snaphshot:
-``ami-222222`` so if you mount this snapshot as a volume you can skip
-these steps.
+These dependencies have already been installed on AMI public snaphshot (in us-east): ``snap-78cf1764`` so if you mount this snapshot as a volume you can skip
+the following steps, but you do need to add the programs to your $PATH:
+
+    cd /mynewmount
+    source env.sh
 
 We will use seqtk for subsampling contigs (can also be used for reads)
 
@@ -116,7 +118,10 @@ Align the reads you used to make the assembly to the contigs database
     bwa mem contigs.fasta pair1.fasta.gz pair2.fasta.gz > samfile
 
 Create a file with coverage and GC information, this will be named
-according to your samfile name
+according to your samfile name with .lencovgc.txt as the suffix.
+
+Ensure you change the name of the files below before running the
+command.
 
 ::
 
