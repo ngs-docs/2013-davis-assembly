@@ -17,8 +17,6 @@ https://github.com/sujaikumar/assemblage
 
 Also see the paper:
 
-::
-
     Sujai Kumar, Martin Jones, Georgios Koutsovoulos, Michael Clarke and Mark Blaxter Blobology: exploring raw genome data for contaminants, symbionts, and parasites using taxon-annotated GC-coverage plots  doi: 10.3389/fgene.2013.00237  http://www.frontiersin.org/Journal/10.3389/fgene.2013.00237/abstract
 
 Also please see Sujai Kumar's recent presentation at Beatles and
