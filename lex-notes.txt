@@ -87,6 +87,7 @@ do::
 
    cd /usr/local/bin
    curl -O https://raw.github.com/lexnederbragt/sequencetools/master/scaffoldgap2bed.py
+   chmod 770 scaffoldgap2bed.py
 
 Download notebook
 -----------------
