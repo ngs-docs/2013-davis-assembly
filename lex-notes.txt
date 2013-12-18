@@ -33,6 +33,12 @@ Download and install samtools::
    make
    cp samtools bcftools/bcftools misc/* /usr/local/bin
 
+Install pysam
+-------------
+
+Do::
+
+   pip install pysam
 
 Install FRCAlign
 ----------------
