@@ -18,5 +18,6 @@ Jared Simpson.
    other-links
    titus-notes
    ray-assembly
+   lex-notes
 
 .. @@ supported by!
