@@ -104,6 +104,8 @@ Use the following practicals from https://github.com/lexnederbragt/INF-BIO9120_f
 
 `Mapping reads to an assembly <https://github.com/lexnederbragt/INF-BIO9120_fall2013_de_novo_assembly/blob/master/practicals/02_Mapping_reads_to_an_assembly.md>`__
 
+The IPython notebook for this is `here:` <https://raw.github.com/lexnederbragt/INF-BIO9120_fall2013_de_novo_assembly/master/practicals/Plot_insertsizes.ipynb>__
+
 `Evaluating assemblies with FRCbam <https://github.com/lexnederbragt/INF-BIO9120_fall2013_de_novo_assembly/tree/master/practicals/05_Evaluating_assemblies_with_FRCbam.md>`__
 
 `Assembly improvement using REAPR <https://github.com/lexnederbragt/INF-BIO9120_fall2013_de_novo_assembly/tree/master/practicals/08_Assembly_improvement_using_REAPR.md>`__
