@@ -91,7 +91,7 @@ Practicals handouts
 
 Use the following practicals from https://github.com/lexnederbragt/INF-BIO9120_fall2013_de_novo_assembly/tree/master/practicals
 
-02_Mapping_reads_to_an_assembly'
+02_Mapping_reads_to_an_assembly
 05_Evaluating_assemblies_with_FRCbam
 08_Assembly_improvement_using_REAPR
 
