@@ -41,8 +41,7 @@ Install R and required packages
     R
     install.packages(c("ggplot2"))
 
-These dependencies have already been installed on AMI public snaphshot (in us-east): ``snap-78cf1764`` so if you mount this snapshot as a volume you can skip
-the following steps, but you do need to add the programs to your $PATH:
+After ths point, the following dependencies have already been installed on AMI public snapshot (in us-east): ``snap-78cf1764`` so if you mount this snapshot as a volume you can skip the following steps, but you do need to add the programs to your $PATH:
 
 ::
 
