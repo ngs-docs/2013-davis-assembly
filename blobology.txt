@@ -1,14 +1,14 @@
 Blobology
 ---------
 
-The steps for generating taxon-associated 'blob' plots are as follows:
+The steps for generating taxon-annotated 'blob' plots are as follows:
 
--  Generate a subset of contigs (for very big assemblies)
+-  Subsample your contigs to a reasonable number (to speed the process for very big assemblies)
 -  Perform rough taxonomic assignment (e.g. using BLASTN against NCBI's
    ``nt`` database)
 -  Map reads back to contigs (e.g. using Bowtie2 or BWA)
 -  Generate a file with GC, taxon and coverage data for plotting
--  Plot graph in R
+-  Plot graph in R using ggplot2
 
 Full instructions for running Blobology and more advanced usage can be
 found at:
