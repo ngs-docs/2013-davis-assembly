@@ -141,4 +141,9 @@ Create the blobology plot
     Rscript --vanilla ../bin/assemblage/blobology.R lencovgc.taxon 0.005 1 2
 
 The final file is called lencovgc.taxon.png - you will need to download
-this to view it.
+this to view it (e.g. with `sftp`, `scp` run on your local machine).
+
+::
+
+    scp -i identity.pem root@server:/path/to/lencovgc.taxon.png . 
+
