@@ -56,7 +56,7 @@ We will use seqtk for subsampling contigs (can also be used for reads)
     git clone https://github.com/lh3/seqtk.git
     cd seqtk; make; cd ..
 
-Bowtie2 for read mapping
+BWA for read mapping
 
 ::
 
