@@ -21,4 +21,9 @@ Jared Simpson.
    lex-notes
    blobology
 
+Other references:
+-----------------
+
+`Starting up an EC2 instances <http://khmer-protocols.readthedocs.org/en/latest/amazon/index.html>`__
+
 .. @@ supported by!

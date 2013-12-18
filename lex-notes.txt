@@ -68,7 +68,7 @@ Do::
    export PERL_EXTUTILS_AUTOINSTALL=--defaultdeps
    perl -MCPAN -e 'install File::Spec::Link'
 
-   make
+   ./install.sh
 
 Install BioPython
 -----------------
