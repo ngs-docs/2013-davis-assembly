@@ -97,7 +97,7 @@ Practicals handouts
 
 Use the following practicals from https://github.com/lexnederbragt/INF-BIO9120_fall2013_de_novo_assembly/tree/master/practicals
 
-`Mapping reads to an assembly <https://github.com/lexnederbragt/INF-BIO9120_fall2013_de_novo_assembly/tree/master/practicals/02_Mapping_reads_to_an_assembly>`
+`Mapping reads to an assembly <https://github.com/lexnederbragt/INF-BIO9120_fall2013_de_novo_assembly/tree/master/practicals/02_Mapping_reads_to_an_assembly>`__
 
 `Evaluating assemblies with FRCbam <https://github.com/lexnederbragt/INF-BIO9120_fall2013_de_novo_assembly/tree/master/practicals/05_Evaluating_assemblies_with_FRCbam>`__
 
