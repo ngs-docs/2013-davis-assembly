@@ -38,10 +38,12 @@ BLAST+ for taxonomic assignment
 
     sudo apt-get install ncbi-blast+
 
-Install R and required packages
+Install R and required packages (requires R 2.14).
 
 ::
 
+    apt-add-repository "deb http://cran.cnr.Berkeley.edu/bin/linux/ubuntu precise/"
+    apt-get update; apt-get dist-upgrade
     sudo apt-get install r-base-core
     R
     install.packages(c("ggplot2"))
@@ -137,6 +139,8 @@ command.
         /^(\S+).*\torder\t([^\t]+)/ and $o{$1} = $2 and next;
         if ($F[2] =~ /^\d+$/ ) { print "$_\t" . (exists $o{$F[1]} ? $o{$F[1]} : "Not annotated") . "\n" }
     ' >> lencovgc.taxon
+
+If you want a different taxonomic level, replace 'order' with another taxonomic level, e.g.: species, genus, family, superfamily, kingdom
 
 Create the blobology plot
 
