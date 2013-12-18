@@ -46,6 +46,8 @@ Install R and required packages
 These dependencies have already been installed on AMI public snaphshot (in us-east): ``snap-78cf1764`` so if you mount this snapshot as a volume you can skip
 the following steps, but you do need to add the programs to your $PATH:
 
+::
+
     cd /mynewmount
     source env.sh
 
