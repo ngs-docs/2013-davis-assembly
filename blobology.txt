@@ -161,7 +161,7 @@ If you want a different taxonomic level, e.g. species, download this script:
     wget http://static.xbase.ac.uk/files/results/nick/make_blobology_file.py
     python make_blobology_file.py contigs_10000.megablast.nt.taxon samfile order > lencovgc.taxon
 
- replace 'order' with another taxonomic level, e.g.: species, genus, family, superfamily, kingdom
+Just replace 'order' with another taxonomic level when you run make_blobology_file.py, e.g.: species, genus, family, superfamily, kingdom
 
 Create the blobology plot
 
