@@ -20,6 +20,7 @@ Jared Simpson.
    ray-assembly
    lex-notes
    blobology
+   pacbio
 
 Other references:
 -----------------
