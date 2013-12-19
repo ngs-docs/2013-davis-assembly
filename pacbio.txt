@@ -8,8 +8,8 @@ Smrtportal AMI
 Smrtportal/smrtanalysis is the software developed by Pacific Biosciences
 
 * start a new amazon instance:
-  * select m3.2xlarge to get 8 cpus (instead of 4 with m1.xlarge) but with NOT the beacon AMI
-  * instead, follow the instructions for setting up the smrtportal AMI from `this pdf <https://s3.amazonaws.com/files.pacb.com/software/smrtanalysis/2.1.0/Doc/Running%20SMRT%20Analysis%20on%20Amazon.pdf>`__
+* select m3.2xlarge to get 8 cpus (instead of 4 with m1.xlarge) but 
+  NOT with the beacon AMI; instead, follow the instructions for setting up the smrtportal AMI from `this pdf <https://s3.amazonaws.com/files.pacb.com/software/smrtanalysis/2.1.0/Doc/Running%20SMRT%20Analysis%20on%20Amazon.pdf>`__
 * **NOTE** skip the filezilla step
 
 Downloading data
