@@ -101,9 +101,10 @@ Running bridgemapper
 
 Check out https://github.com/PacificBiosciences/Bioinformatics-Training/wiki/Bridgemapper
 
-First, fix a 'bug' which makes one of the steps single-cpu instead of parallel
+First, fix a 'bug' which makes one of the steps single-cpu instead of parallel.
 
-Edit /opt/smrtanalysis/analysis/lib/python2.7/pbbridgemapper/bridgemapper.py, change lines 426+427 from::
+Edit /opt/smrtanalysis/analysis/lib/python2.7/pbbridgemapper/bridgemapper.py:
+change lines **426 + 427** from::
 
   stdout, stderr = runBlasr(affixesFastq, args.referenceFasta,
                               affixBlasrOutputPath)
