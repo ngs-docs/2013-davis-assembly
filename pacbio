@@ -46,7 +46,7 @@ Check /opt/smrtanalysis/common/jobs/016/016XXX, where 016XXX is the job ID from 
 Results appear in /data
 
 Running smrtanalysis from the commandline
----------------------------------
+-----------------------------------------
 
 See this part of the Pacific Biosciences wiki: https://github.com/PacificBiosciences/SMRT-Analysis/wiki/SMRT-Pipe-Reference-Guide-v2.0#-using-the-command-line
 
@@ -64,3 +64,13 @@ Or customise smrtpipe to use more cpus (if available)::
   smrtpipe.py -D NPROC=24 --params=settings.xml xml:input.xml
 
 Results appear in /data
+
+Base modification detection
+---------------------------
+
+Use:
+
+* the same smrtcell data
+* the RS_Modification_and_Motif_Analysis.1 protocol
+* the 'e coli K12 MG1655' reference from the dropdown menu
+
