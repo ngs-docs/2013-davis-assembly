@@ -114,7 +114,9 @@ To::
   stdout, stderr = runBlasr(affixesFastq, args.referenceFasta,
                               affixBlasrOutputPath, nproc=args.nproc)
 
+
 You can now run Bridgemapper through the smrtportal, which gives the optimal output for viewing in the PacBio genome browser SMRTview. However, this will take a long time.
+To do that, add the velvet assembly as reference through 'Home --> Import and Manage --> Manage Reference Sequences --> New'
 
 **Alternatively,** run bridgemapper on a subset of the reads through the command line. Use screen!
 
