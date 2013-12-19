@@ -19,7 +19,7 @@ We'll use data from a single smrtcell based on a size selected 20kb *E. coli* li
 Do::
 
   cd /opt/smrtanalysis/common/inputs_dropbox
-  wget http://sourceforge.net/projects/fuse/files/fuse-2.X/2.8.4/fuse-2.8.4.tar.gz
+  wget http://files.pacb.com/datasets/secondary-analysis/ecoli-k12-P4C2-20KSS/ecoliK12.tar.gz
   tar -vxzf ecoliK12.tar.gz
 
 To import into smrtportal:
