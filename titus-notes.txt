@@ -65,7 +65,7 @@ sample, you can use the three-pass assembly protocol (see `Kalamazoo
 ::
 
    normalize-by-median.py -k 20 -C 20 -x 2e9 -N 4 --savehash C20.kh <FASTA/FASTQ/GZ/BZ2 files>
-   filter-abund.py --loadhash C20.kh *.keep
+   filter-abund.py C20.kh *.keep
    normalize-by-median.py -k 20 -C 5 -x 2e9 -N 4 *.keep.abundfilt
 
 Finally, get the complete stats on the remaining reads::
