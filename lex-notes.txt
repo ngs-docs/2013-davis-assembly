@@ -4,8 +4,8 @@ Assembly QC
 
 Enable HTTPS in the security group.
 
-Install BWA
------------
+Installing software
+-------------------
 
 First, we need to install the `BWA aligner
 <http://bio-bwa.sourceforge.net/>`__::
@@ -20,9 +20,6 @@ First, we need to install the `BWA aligner
    cp bwa /usr/local/bin
 
 
-Install samtools
-----------------
-
 Download and install samtools::
 
    cd /root
@@ -35,7 +32,6 @@ Download and install samtools::
 
 
 Install FRCAlign
-----------------
 
 First::
 
@@ -56,7 +52,6 @@ Do::
 
 
 Install REAPR
--------------
 
 Do::
 
@@ -73,8 +68,7 @@ Do::
    ./install.sh
    ln -s /root/Reapr_1.0.16/reapr /usr/local/bin/reapr
 
-Install Python modules
------------------
+Python modules
 
 Do::
 
@@ -82,14 +76,12 @@ Do::
    pip install pysam
 
 Install R
----------
 
 Do::
 
    apt-get install r-base
 
 Install scaffoldgap2bed
------------------------
 
 do::
 
@@ -97,8 +89,8 @@ do::
    curl -O https://raw.github.com/lexnederbragt/sequencetools/master/scaffoldgap2bed.py
    chmod 770 scaffoldgap2bed.py
 
-Download notebook
------------------
+Download IPython notebook
+
 do::
 
    cd /usr/local/notebooks
