@@ -223,7 +223,7 @@ The results are in '/mnt/cover2/reads.hist'.
 4. Generating an error profile for individual shotgun reads
 ===========================================================
 
-   /path/to/khmer/scripts/calc-error-profile.py reads.fq
+   calc-error-profile.py reads.fq
 
 For example, ::
 
