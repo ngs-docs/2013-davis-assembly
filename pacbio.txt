@@ -84,8 +84,8 @@ Running blasr to map reads
 Do::
 
   . /opt/smrtanalysis/etc/setup.sh
-  blasr  /opt/smrtanalysis/common/inputs_dropbox/ecoliK12/Analysis_Results/m130404_014004_sidney_c100506902550000001823076808221337_s1_p0.2.bax.h5 \
-  /path/to/velvet_pe+mp_71.fa \
+  blasr /opt/smrtanalysis/common/inputs_dropbox/ecoliK12/Analysis_Results/m130404_014004_sidney_c100506902550000001823076808221337_s1_p0.2.bax.h5 \
+  /path/to/velvet_pe+mp.fa \
   -minSubreadLength 1000 -bestn 1 -nproc 4 -sam -out pacbio_2_velvet_pe+mp_71.sam
   
   samtools view -buS pacbio_2_velvet_pe+mp_71.sam | samtools sort - pacbio_2_velvet_pe+mp_71.sorted
