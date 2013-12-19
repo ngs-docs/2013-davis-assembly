@@ -42,9 +42,17 @@ Install R and required packages (requires R 2.14).
 
 ::
 
-    apt-add-repository "deb http://cran.cnr.Berkeley.edu/bin/linux/ubuntu precise/"
-    apt-get update; apt-get dist-upgrade
-    sudo apt-get install r-base-core
+    wget http://athyra.ged.msu.edu/~mcrusoe/debs/oneiric/r-base-core-dbg_3.0.2-1_amd64.deb
+    wget http://athyra.ged.msu.edu/~mcrusoe/debs/oneiric/r-base-core_3.0.2-1_amd64.deb
+    wget http://athyra.ged.msu.edu/~mcrusoe/debs/oneiric/r-base-dev_3.0.2-1_all.deb
+    wget http://athyra.ged.msu.edu/~mcrusoe/debs/oneiric/r-base-html_3.0.2-1_all.deb
+    wget http://athyra.ged.msu.edu/~mcrusoe/debs/oneiric/r-base_3.0.2-1_all.deb
+    wget http://athyra.ged.msu.edu/~mcrusoe/debs/oneiric/r-doc-html_3.0.2-1_all.deb
+    wget http://athyra.ged.msu.edu/~mcrusoe/debs/oneiric/r-doc-info_3.0.2-1_all.deb
+    wget http://athyra.ged.msu.edu/~mcrusoe/debs/oneiric/r-doc-pdf_3.0.2-1_all.deb
+    wget http://athyra.ged.msu.edu/~mcrusoe/debs/oneiric/r-mathlib_3.0.2-1_amd64.deb
+    wget http://athyra.ged.msu.edu/~mcrusoe/debs/oneiric/r-recommended_3.0.2-1_all.deb
+    dpkg -i r-base* r-base-core_* r-recommended* r-mathlib*
     R
     install.packages(c("ggplot2"))
 
