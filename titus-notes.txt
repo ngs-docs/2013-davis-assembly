@@ -17,17 +17,11 @@ You'll need khmer and screed installed::
    echo 'export PATH="/usr/local/share/khmer/scripts:$PATH"' >> ~/.bashrc
    source ~/.bashrc
    
-You will also need the khmer repository for some of the sandbox scripts::
-
-   git clone https://github.com/ged-lab/khmer.git -b master 
-
 We'll be using the `khmer command line scripts
 <http://khmer.readthedocs.org/en/latest/scripts.html>`__.
 
 Data
 ====
-
-.. @@ also fake?
 
 Download two data sets::
 
@@ -35,19 +29,21 @@ Download two data sets::
   curl -O https://s3.amazonaws.com/public.ged.msu.edu/ecoli_ref-5m.fastq.gz
   curl -O https://s3.amazonaws.com/public.ged.msu.edu/ecoliMG1655.fa.gz
 
+(The sequencing data set is the first 5m reads from `Chitsaz et al.,
+2011 <http://www.ncbi.nlm.nih.gov/pubmed/21926975>`__.)
+
 0. Assembling mRNAseq and metagenome data in the cloud
 ======================================================
 
 See `Eel Pond mRNAseq assembly protocol
-<https://khmer-protocols.readthedocs.org/en/v0.8.3/mrnaseq/index.html>`__
+<https://khmer-protocols.readthedocs.org/en/latest/mrnaseq/index.html>`__
 and `Kalamazoo metagenome assembly protocols
-<https://khmer-protocols.readthedocs.org/en/v0.8.3/metagenomics/index.html>`__.
+<https://khmer-protocols.readthedocs.org/en/latest/metagenomics/index.html>`__.
 
 Also see `NGS course materials <http://ged.msu.edu/angus/tutorials-2013/>`__
 and `other workshop materials <http://ged.msu.edu/angus/>`__.
 
-Note 'Using screen' and 'Installing Dropbox'.
-.. @@
+Note `'Using screen' <https://khmer-protocols.readthedocs.org/en/latest/amazon/using-screen.html>`__ and `'Installing Dropbox' <https://khmer-protocols.readthedocs.org/en/latest/amazon/installing-dropbox.html>`__.
 
 1. Estimating genomic richness/non-repetitive genome content
 ============================================================
@@ -95,7 +91,8 @@ which works out to::
 
    385233 * 86.1 / 5 = 6633712.26
 
-so the predicted genome size of E. coli is 6.6 Mbp.  Not 
+so the predicted genome size of E. coli is 6.6 Mbp.  Not too far off... the
+true answer is 4.5 Mbp.
 
 Looking at DN coverage
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -147,8 +144,13 @@ and map the diginormed reads::
    samtools sort dn.bam dn.sorted
    samtools index dn.sorted.bam
 
-Now, view with 'samtools tview'.
-.. @@
+Now, view with 'samtools tview'::
+
+   samtools tview raw.sorted.bam ../ecoliMG1655.fa
+
+or::
+
+   samtools tview dn.sorted.bam ../ecoliMG1655.fa
 
 2. Generating a saturation curve for shotgun data
 =================================================
@@ -174,8 +176,6 @@ Run::
 
 The results are in '/mnt/saturate/ecoli_5m-report.txt'.
 
-.. @@ plot
-
 3. Generating a coverage plot/coverage spectrum without a reference
 ===================================================================
 
@@ -200,8 +200,6 @@ First, let's do it for a small data set with interesting coverage::
 
 The results are in '/mnt/cover1/reads.hist'.
 
-.. @@ plot
-
 Example 2
 ~~~~~~~~~
 
@@ -214,8 +212,6 @@ Now try E. coli::
    python /usr/local/share/khmer/sandbox/calc-median-distribution.py counts.kh ../ecoli_ref-5m.fastq.gz reads.hist
 
 The results are in '/mnt/cover2/reads.hist'.
-
-.. @@ plot
 
 4. Generating an error profile for individual shotgun reads
 ===========================================================
@@ -240,10 +236,6 @@ For example, ::
 
 The results will be in '/mnt/error/ecoli_ref-5m.fastq.gz.errhist'.
 
-.. @@ results
-
-.. @@ k-mer intersection/lizzy?
-
 5. Assembly-filtered k-mer spectrum
 ===================================
 
@@ -257,3 +249,52 @@ Do::
    abundance-dist.py counts.kh /usr/local/share/khmer/data/stamps-genomes.fa counts.out
 
 The results will be in '/mnt/kmercov/counts.out'.
+
+6. Partitioning
+===============
+
+Do::
+
+   cd /mnt
+   mkdir part
+   cd part
+
+   do-partition.py -k 32 -x 1e7 -N 4 stamps /usr/local/share/khmer/data/stamps-reads.fa.gz
+
+   extract-partitions.py -X 1000 stamps *.part
+
+You will now have two files, stamps.group0000.fa and stamps.group0001.fa,
+that represent the two "species" in the data set.  To examine them, let's
+graph their abundances::
+
+   abundance-dist-single.py -k 20 -x 1e7 -N 4 stamps.group0000.fa group0.hist
+   abundance-dist-single.py -k 20 -x 1e7 -N 4 stamps.group0001.fa group1.hist
+
+The hist files will be in '/mnt/part/group0.hist' and '/mnt/part/group1.hist'.
+
+7. A small demo set for khmer protocols/mRNAseq
+===============================================
+
+To get started on `the mRNAseq protocol <https://khmer-protocols.readthedocs.org/en/latest/mrnaseq/index.html>`__ with a small data set, do::
+
+   mkdir /data
+   cd /data
+   curl -O http://athyra.idyll.org/~t/mrnaseq-subset.tar
+   tar xvf mrnaseq-subset.tar
+
+and then start at "Link your data into a working directory".  (You'll
+need to install the software at the top, too.)
+
+8. A small demo set for khmer protocols/metagenomics
+====================================================
+
+
+To get started on `the metagenomics protocol <https://khmer-protocols.readthedocs.org/en/latest/metagenomics/index.html>`__ with a small data set, do::
+
+   mkdir /data
+   cd /data
+   curl -O http://athyra.idyll.org/~t/metag-subset.tar
+   tar xvf metag-subset.tar
+
+and then start at "Link your data into a working directory".  (You'll
+need to install the software at the top, too.)
