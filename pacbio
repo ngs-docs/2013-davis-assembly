@@ -40,4 +40,27 @@ HGAP for assembly
 
 Monitor the run, it will probably go overnight
 
+**Where is the data**
 
+Check /opt/smrtanalysis/common/jobs/016/016XXX, where 016XXX is the job ID from smrtportal.  
+Results appear in /data
+
+Running smrtanalysis from the commandline
+---------------------------------
+
+See this part of the Pacific Biosciences wiki: https://github.com/PacificBiosciences/SMRT-Analysis/wiki/SMRT-Pipe-Reference-Guide-v2.0#-using-the-command-line
+
+* You'll need a settings xml file, which can only be obtained by setting up a smrtportal job with the correct protocol, and grabbing the settings.xml from /opt/smrtanalysis/common/jobs/016/016XXX, where 016XXX is the job ID from smrtportal
+* You'll also need an input.fofn file ('file-of-filenames', which contains the full path to the bax.h5 (or bas.h5) file(s)
+
+Do::
+
+  . /opt/smrtanalysis/etc/setup.sh
+  fofnToSmrtpipeInput.py input.fofn > input.xml
+  smrtpipe.py --params=settings.xml xml:input.xml
+
+Or customise smrtpipe to use more cpus (if available)::
+
+  smrtpipe.py -D NPROC=24 --params=settings.xml xml:input.xml
+
+Results appear in /data
