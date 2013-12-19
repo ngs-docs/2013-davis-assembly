@@ -96,3 +96,53 @@ Do::
 
 The bam and bai files can be added to the IGV browser
 
+Running bridgemapper
+--------------------
+
+Check out https://github.com/PacificBiosciences/Bioinformatics-Training/wiki/Bridgemapper
+
+First, fix a 'bug' which makes one of the steps single-cpu instead of parallel
+
+Edit /opt/smrtanalysis/analysis/lib/python2.7/pbbridgemapper/bridgemapper.py, change lines 426+427 from::
+
+  stdout, stderr = runBlasr(affixesFastq, args.referenceFasta,
+                              affixBlasrOutputPath)
+
+To::
+
+  stdout, stderr = runBlasr(affixesFastq, args.referenceFasta,
+                              affixBlasrOutputPath, nproc=args.nproc)
+
+You can now run Bridgemapper through the smrtportal, which gives the optimal output for viewing in the PacBio genome browser SMRTview. However, this will take a long time.
+
+**Alternatively,** run bridgemapper on a subset of the reads through the command line. Use screen!
+
+Do::
+
+  . /opt/smrtanalysis/etc/setup.sh
+
+  pbbridgemapper --debug --nproc 8 /opt/smrtanalysis/common/inputs_dropbox/ecoliK12/Analysis_Results/m130404_014004_sidney_c100506902550000001823076808221337_s1_p0.2.bax.h5 \
+  /path/to/velvet_pe+mp.fa bridgemapper_out
+
+* --debug allows for seeing what bridgemapper is doing
+
+To use SMRTview with the results, you'll need to make a smrtportal reference repo::
+
+  referenceUploader -c -p smrtpipe_references -n velvet_pe+mp -f /path/to/velvet_pe+mp.fa --saw='sawriter -welter'
+
+* -c: create
+* -p: folder for references
+* -n: name of the reference
+* -f: fasta file
+
+**Viewing with SMRTView**
+
+* download the split_reads.bridgemapper.gz and complete smrtpipe_references folder to your harddrive
+* install SMRTView from https://github.com/PacificBiosciences/DevNet/wiki/SMRT-View
+* choose 'File --> Open data from server' and select 'Files of type --> Reference Metadata'
+* find the relevant reference.info.xml in the smrtpipe_references folder
+* choose 'File --> add Tracks from server" and select 'Files of type --> As above and also gzipped files'
+* add the split_reads.bridgemapper.gz file
+
+Start browsing!
+
