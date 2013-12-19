@@ -1,0 +1,43 @@
+================
+PacBio tutorials
+================
+
+Smrtportal AMI
+-------------------
+
+Smrtportal/smrtanalysis is the software developed by Pacific Biosciences
+
+* start a new amazon instance (as before, m1.xlarge)
+* follow the instructions for setting up the smrtportal AMI from `this pdf <https://s3.amazonaws.com/files.pacb.com/software/smrtanalysis/2.1.0/Doc/Running%20SMRT%20Analysis%20on%20Amazon.pdf>`__
+* **NOTE** skip the filezilla step
+
+Downloading data
+-------------------
+
+We'll use data from a single smrtcell based on a size selected 20lb *E. coli* library
+
+Do::
+
+  cd /opt/smrtanalysis/common/inputs_dropbox
+  wget http://sourceforge.net/projects/fuse/files/fuse-2.X/2.8.4/fuse-2.8.4.tar.gz
+  tar -vxzf ecoliK12.tar.gz
+
+To import into smrtportal:
+
+* in smrtportal, go to Home --> Import and Manage --> Import SMRT Cells
+* click on common/inputs_dropbox
+* click 'Scan' and OK
+
+HGAP for assembly
+-------------------
+
+* in smrtportal, go to Home --> Create New
+* add your imported smrtcell by selecting it and clicking the triangle pointing to the right
+* give your job a name
+* for protocol, select RS_HGAP_Assembly.2 (*not* '.1')
+* click 'Save'
+* click 'Start'
+
+Monitor the run, it will probably go overnight
+
+
