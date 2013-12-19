@@ -14,7 +14,7 @@ Smrtportal/smrtanalysis is the software developed by Pacific Biosciences
 Downloading data
 -------------------
 
-We'll use data from a single smrtcell based on a size selected 20lb *E. coli* library
+We'll use data from a single smrtcell based on a size selected 20kb *E. coli* library
 
 Do::
 
@@ -43,7 +43,7 @@ Monitor the run, it will probably go overnight
 **Where is the data**
 
 Check /opt/smrtanalysis/common/jobs/016/016XXX, where 016XXX is the job ID from smrtportal.  
-Results appear in /data
+Results appear in the *data* folder
 
 Running smrtanalysis from the commandline
 -----------------------------------------
@@ -63,7 +63,7 @@ Or customise smrtpipe to use more cpus (if available)::
 
   smrtpipe.py -D NPROC=24 --params=settings.xml xml:input.xml
 
-Results appear in /data
+Results appear in the *data* folder
 
 Base modification detection
 ---------------------------
