@@ -41,7 +41,7 @@ Web viewer *or* you can download it to work with on your Amazon machine
 (https:// + machine name, password 'beacon', and on the command line::
 
    cd /usr/local/notebooks
-   curl -O http://nbviewer.ipython.org/github/ngs-docs/2013-davis-assembly/blob/master/2013-davis-assembly-khmer.ipynb
+   curl -O https://raw.github.com/ngs-docs/2013-davis-assembly/master/2013-davis-assembly-khmer.ipynb
 
 0. Assembling mRNAseq and metagenome data in the cloud
 ======================================================
