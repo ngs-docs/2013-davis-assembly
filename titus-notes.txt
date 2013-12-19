@@ -5,18 +5,14 @@ Notes on using khmer to do stuff
 Software
 ========
 
-You'll need khmer and screed installed::
+You'll need khmer and its dependencies installed::
 
-   pip install screed
-
-   cd /usr/local/share
-   git clone https://github.com/ged-lab/khmer -b master
-   cd khmer
-   make test
-   echo 'export PYTHONPATH="/usr/local/share/khmer:$PYTHONPATH"' >> ~/.bashrc
-   echo 'export PATH="/usr/local/share/khmer/scripts:$PATH"' >> ~/.bashrc
-   source ~/.bashrc
+   pip install -e git+https://github.com/ged-lab/khmer.git@kmer_error_profile#egg=khmer
    
+The khmer sandbox scripts are in `src/khmer/sandbox`.
+
+If installing elsewhere you may need to modify `install [...]` to `install --user [...]`
+
 We'll be using the `khmer command line scripts
 <http://khmer.readthedocs.org/en/latest/scripts.html>`__.
 
@@ -226,14 +222,6 @@ The results are in '/mnt/cover2/reads.hist'.
 
 4. Generating an error profile for individual shotgun reads
 ===========================================================
-
-For this, you'll need to use the kmer_error_profile branch::
-
-   cd /usr/local/share/khmer
-   git checkout kmer_error_profile
-   make test
-
-and now run the calc-error-profile.py script::
 
    /path/to/khmer/scripts/calc-error-profile.py reads.fq
 
