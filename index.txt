@@ -11,7 +11,7 @@ Jared Simpson.
 
 `Mailing list <mailto:2013-davis-assembly@lists.idyll.org>`__
 
-`Setting up Amazon VM<http://khmer-protocols.readthedocs.org/en/latest/amazon/index.html>`__
+`Setting up Amazon VM <http://khmer-protocols.readthedocs.org/en/latest/amazon/index.html>`__
 
 .. toctree::
 
