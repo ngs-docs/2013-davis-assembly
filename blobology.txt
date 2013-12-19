@@ -38,7 +38,7 @@ BLAST+ for taxonomic assignment
 
     sudo apt-get install ncbi-blast+
 
-Install R and required packages (requires R 2.14).
+Install R and required packages (requires R >=2.14).
 
 ::
 
@@ -54,7 +54,7 @@ Install R and required packages (requires R 2.14).
     wget http://athyra.ged.msu.edu/~mcrusoe/debs/oneiric/r-recommended_3.0.2-1_all.deb
     dpkg -i r-base* r-base-core_* r-recommended* r-mathlib*
     R
-    install.packages(c("ggplot2"))
+    install.packages(c("codetools", "MASS", "ggplot2"))
 
 After ths point, the following dependencies have already been installed on AMI public snapshot (in us-east): ``snap-78cf1764`` so if you mount this snapshot as a volume you can skip the following steps, but you do need to add the programs to your $PATH:
 
