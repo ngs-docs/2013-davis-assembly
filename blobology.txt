@@ -125,11 +125,17 @@ Create a database of your contigs for BWA
 
     bwa index contigs.fasta
 
-Align the reads you used to make the assembly to the contigs database
+Align the reads you used to make the assembly to the contigs database (for paired-end reads)
 
 ::
 
     bwa mem contigs.fasta pair1.fasta.gz pair2.fasta.gz > samfile
+
+If you have interleaved reads, or single-end, just omit the second FASTQ file
+
+::
+
+    bwa mem contigs.fasta reads.fasta.gz > samfile
 
 Create a file with coverage and GC information, this will be named
 according to your samfile name with .lencovgc.txt as the suffix.
