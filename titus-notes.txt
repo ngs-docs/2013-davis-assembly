@@ -7,15 +7,33 @@ Software
 
 You'll need khmer and screed installed::
 
-   pip install khmer
    pip install screed
 
+   cd /usr/local/share
+   git clone https://github.com/ged-lab/khmer -b master
+   cd khmer
+   make test
+   echo 'export PYTHONPATH="/usr/local/share/khmer:$PYTHONPATH"' >> ~/.bashrc
+   echo 'export PATH="/usr/local/share/khmer/scripts:$PATH"' >> ~/.bashrc
+   source ~/.bashrc
+   
 You will also need the khmer repository for some of the sandbox scripts::
 
    git clone https://github.com/ged-lab/khmer.git -b master 
 
 We'll be using the `khmer command line scripts
 <http://khmer.readthedocs.org/en/latest/scripts.html>`__.
+
+Data
+====
+
+.. @@ also fake?
+
+Download two data sets::
+
+  cd /mnt
+  curl -O https://s3.amazonaws.com/public.ged.msu.edu/ecoli_ref-5m.fastq.gz
+  curl -O https://s3.amazonaws.com/public.ged.msu.edu/ecoliMG1655.fa.gz
 
 0. Assembling mRNAseq and metagenome data in the cloud
 ======================================================
@@ -25,25 +43,19 @@ See `Eel Pond mRNAseq assembly protocol
 and `Kalamazoo metagenome assembly protocols
 <https://khmer-protocols.readthedocs.org/en/v0.8.3/metagenomics/index.html>`__.
 
-1. Generating a saturation curve for shotgun data
-=================================================
+Also see `NGS course materials <http://ged.msu.edu/angus/tutorials-2013/>`__
+and `other workshop materials <http://ged.msu.edu/angus/>`__.
 
-You can use normalize-by-median.py to assess information saturation in your
-shotgun data::
+Note 'Using screen' and 'Installing Dropbox'.
+.. @@
 
-   normalize-by-median.py -k 20 -C 5 -x 2e9 -N 4 -R report.txt <FASTA/FASTQ/GZ/BZ2 files>
-
-Note that the '-x' and '-N' parameters should multiple to be under the total
-amount of data in your data set.
-
-'report.txt' column 1 will then contain the number of reads examined,
-and column 2 will contain the number of reads kept.  When this levels
-off, you've saturated to a coverage of 5.
-
-2. Estimating genomic richness/non-repetitive genome content
+1. Estimating genomic richness/non-repetitive genome content
 ============================================================
 
-You can use the three-pass assembly protocol (see `Kalamazoo <https://khmer-protocols.readthedocs.org/en/v0.8.3/metagenomics/index.html>`__) ::
+If you want to estimate the non-repetitive sequence content of your
+sample, you can use the three-pass assembly protocol (see `Kalamazoo
+<https://khmer-protocols.readthedocs.org/en/v0.8.3/metagenomics/index.html>`__)
+::
 
    normalize-by-median.py -k 20 -C 20 -x 2e9 -N 4 --savehash C20.kh <FASTA/FASTQ/GZ/BZ2 files>
    filter-abund.py --loadhash C20.kh *.keep
@@ -57,25 +69,191 @@ Divide the total number of bases remaining by 5 and you'll have an estimate
 of your total genome size.  (Technically, the total number of nodes in
 your De Bruijn graph. :)
 
+Note that the '-x' and '-N' parameters, above, should multiple to be
+under the total amount of memory on your computer.  Scripts will
+complain if this is set too low.
+
+Example
+~~~~~~~
+
+Run::
+
+   cd /mnt
+   mkdir richness
+   cd richness
+   normalize-by-median.py -k 20 -C 20 -x 5e8 -N 4 --savehash C20.kh ../ecoli_ref-5m.fastq.gz
+   filter-abund.py C20.kh *.keep
+   normalize-by-median.py -k 20 -C 5 -x 5e8 -N 4 *.keep.abundfilt
+
+   python /usr/local/share/khmer/sandbox/readstats.py *.keep.abundfilt.keep
+
+For this data, you should get::
+
+   33151414 bp / 385233 seqs; 86.1 average length -- total
+
+which works out to::
+
+   385233 * 86.1 / 5 = 6633712.26
+
+so the predicted genome size of E. coli is 6.6 Mbp.  Not 
+
+Looking at DN coverage
+~~~~~~~~~~~~~~~~~~~~~~
+
+First, we need to install the `BWA aligner
+<http://bio-bwa.sourceforge.net/>`__::
+
+   cd /root
+   wget -O bwa-0.7.5.tar.bz2 http://sourceforge.net/projects/bio-bwa/files/bwa-0.7.5a.tar.bz2/download
+
+   tar xvfj bwa-0.7.5.tar.bz2
+   cd bwa-0.7.5a
+   make
+
+   cp bwa /usr/local/bin
+
+We also need a new version of `samtools <http://samtools.sourceforge.net/>`__::
+
+   cd /root
+   curl -O -L http://sourceforge.net/projects/samtools/files/samtools/0.1.19/samtools-0.1.19.tar.bz2
+   tar xvfj samtools-0.1.19.tar.bz2
+   cd samtools-0.1.19
+   make
+   cp samtools /usr/local/bin
+   cp bcftools/bcftools /usr/local/bin
+   cd misc/
+   cp *.pl maq2sam-long maq2sam-short md5fa md5sum-lite wgsim /usr/local/bin/
+
+Next, map the raw reads::
+
+   cd /mnt/richness
+   gunzip ../ecoliMG1655.fa.gz
+   bwa index ../ecoliMG1655.fa
+
+   bwa aln ../ecoliMG1655.fa ../ecoli_ref-5m.fastq.gz > raw.sai
+   bwa samse ../ecoliMG1655.fa raw.sai ../ecoli_ref-5m.fastq.gz > raw.sam
+
+   samtools faidx ../ecoliMG1655.fa
+   samtools import ../ecoliMG1655.fa.fai raw.sam raw.bam
+   samtools sort raw.bam raw.sorted
+   samtools index raw.sorted.bam
+
+and map the diginormed reads::
+
+   bwa aln ../ecoliMG1655.fa ecoli_ref-5m.fastq.gz.keep.abundfilt.keep > dn.sai
+   bwa samse ../ecoliMG1655.fa dn.sai ecoli_ref-5m.fastq.gz.keep.abundfilt.keep > dn.sam
+
+   samtools import ../ecoliMG1655.fa.fai dn.sam dn.bam
+   samtools sort dn.bam dn.sorted
+   samtools index dn.sorted.bam
+
+Now, view with 'samtools tview'.
+.. @@
+
+2. Generating a saturation curve for shotgun data
+=================================================
+
+You can use normalize-by-median.py to assess information saturation in your
+shotgun data::
+
+   normalize-by-median.py -k 20 -C 5 -x 2e9 -N 4 -R report.txt <FASTA/FASTQ/GZ/BZ2 files>
+
+'report.txt' column 1 will then contain the number of reads examined,
+and column 2 will contain the number of reads kept.  When this levels
+off, you've saturated to a coverage of 5.
+
+Example
+~~~~~~~
+
+Run::
+
+   cd /mnt
+   mkdir saturate
+   cd saturate
+   normalize-by-median.py -k 20 -C 5 -x 5e8 -N 4 -R ecoli_5m-report.txt ../ecoli_ref-5m.fastq.gz
+
+The results are in '/mnt/saturate/ecoli_5m-report.txt'.
+
+.. @@ plot
+
 3. Generating a coverage plot/coverage spectrum without a reference
 ===================================================================
 
 First, load all the k-mers in the data set into a counting file::
 
-   load-into-counting.py -k 20 -C 20 -x 2e9 -N 4 counts.kh reads.fq
+   load-into-counting.py -k 20 -x 2e9 -N 4 counts.kh reads.fq
 
 Then calculate the spectrum of read coverages::
 
    python /path/to/khmer/sandbox/calc-median-distribution.py counts.kh reads.fq reads.hist
+
+Example 1
+~~~~~~~~~
+
+First, let's do it for a small data set with interesting coverage::
+
+   cd /mnt
+   mkdir cover1
+   cd cover1
+   load-into-counting.py -k 20 -x 1e8 -N 4 counts.kh /usr/local/share/khmer/data/stamps-reads.fa.gz
+   python /usr/local/share/khmer/sandbox/calc-median-distribution.py counts.kh /usr/local/share/khmer/data/stamps-reads.fa.gz reads.hist
+
+The results are in '/mnt/cover1/reads.hist'.
+
+.. @@ plot
+
+Example 2
+~~~~~~~~~
+
+Now try E. coli::
+
+   cd /mnt
+   mkdir cover2
+   cd cover2
+   load-into-counting.py -k 20 -x 1e9 -N 4 counts.kh ../ecoli_ref-5m.fastq.gz
+   python /usr/local/share/khmer/sandbox/calc-median-distribution.py counts.kh ../ecoli_ref-5m.fastq.gz reads.hist
+
+The results are in '/mnt/cover2/reads.hist'.
+
+.. @@ plot
 
 4. Generating an error profile for individual shotgun reads
 ===========================================================
 
 For this, you'll need to use the kmer_error_profile branch::
 
-   git clone https://github.com/ged-lab/khmer.git -b kmer_error_profile
-   cd khmer && make all
+   cd /usr/local/share/khmer
+   git checkout kmer_error_profile
+   make test
 
 and now run the calc-error-profile.py script::
 
    /path/to/khmer/scripts/calc-error-profile.py reads.fq
+
+For example, ::
+
+   cd /mnt
+   mkdir error
+   cd error
+
+   calc-error-profile.py ../ecoli_ref-5m.fastq.gz
+
+The results will be in '/mnt/error/ecoli_ref-5m.fastq.gz.errhist'.
+
+.. @@ results
+
+.. @@ k-mer intersection/lizzy?
+
+5. Assembly-filtered k-mer spectrum
+===================================
+
+Do::
+
+   cd /mnt
+   mkdir kmercov
+   cd kmercov
+
+   load-into-counting.py -k 20 -x 1e7 -N 4 counts.kh /usr/local/share/khmer/data/stamps-reads.fa.gz
+   abundance-dist.py counts.kh /usr/local/share/khmer/data/stamps-genomes.fa counts.out
+
+The results will be in '/mnt/kmercov/counts.out'.
