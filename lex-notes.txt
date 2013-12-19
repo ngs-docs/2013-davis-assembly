@@ -33,12 +33,6 @@ Download and install samtools::
    make
    cp samtools bcftools/bcftools misc/* /usr/local/bin
 
-Install pysam
--------------
-
-Do::
-
-   pip install pysam
 
 Install FRCAlign
 ----------------
@@ -77,13 +71,22 @@ Do::
    perl -MCPAN -e 'install File::Spec::Link'
 
    ./install.sh
+   ln -s /root/Reapr_1.0.16/reapr /usr/local/bin/reapr
 
-Install BioPython
+Install Python modules
 -----------------
 
 Do::
 
    pip install biopython
+   pip install pysam
+
+Install R
+---------
+
+Do::
+
+   apt-get install r-base
 
 Install scaffoldgap2bed
 -----------------------
@@ -92,6 +95,7 @@ do::
 
    cd /usr/local/bin
    curl -O https://raw.github.com/lexnederbragt/sequencetools/master/scaffoldgap2bed.py
+   chmod 770 scaffoldgap2bed.py
 
 Download notebook
 -----------------
@@ -123,6 +127,21 @@ Use the following practicals from https://github.com/lexnederbragt/INF-BIO9120_f
 
 Note that you'll have to adjust file paths and we're skipping a few
 things (e.g. SNP calling)
+
+Downloading data from the VM
+----------------------------
+use scp:
+
+do::
+
+   scp -i /path/to/keyfile.pem root@ec-xx-xx-xx-.compute-1.amazonaws.com:/path/to/data ./
+
+
+For IGV, download:
+
+* velvet fasta file
+* bam and bai files
+* bed and gff files once you have them
 
 ---
 
