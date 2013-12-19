@@ -140,7 +140,14 @@ command.
         if ($F[2] =~ /^\d+$/ ) { print "$_\t" . (exists $o{$F[1]} ? $o{$F[1]} : "Not annotated") . "\n" }
     ' >> lencovgc.taxon
 
-If you want a different taxonomic level, replace 'order' with another taxonomic level, e.g.: species, genus, family, superfamily, kingdom
+If you want a different taxonomic level, e.g. species, download this script:
+
+::
+
+    wget http://static.xbase.ac.uk/files/results/nick/make_blobology_file.py
+    python make_blobology_file.py contigs_10000.megablast.nt.taxon samfile order > lencovgc.taxon
+
+ replace 'order' with another taxonomic level, e.g.: species, genus, family, superfamily, kingdom
 
 Create the blobology plot
 
