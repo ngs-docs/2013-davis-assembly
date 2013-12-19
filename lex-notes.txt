@@ -7,8 +7,7 @@ Enable HTTPS in the security group.
 Installing software
 -------------------
 
-First, we need to install the `BWA aligner
-<http://bio-bwa.sourceforge.net/>`__::
+**BWA aligner**
 
    cd /root
    wget -O bwa-0.7.5.tar.bz2 http://sourceforge.net/projects/bio-bwa/files/bwa-0.7.5a.tar.bz2/download
@@ -20,7 +19,9 @@ First, we need to install the `BWA aligner
    cp bwa /usr/local/bin
 
 
-Download and install samtools::
+**samtools**
+
+Do::
 
    cd /root
    curl -L http://sourceforge.net/projects/samtools/files/latest/download?source=files >samtools.tar.bz2
@@ -31,7 +32,7 @@ Download and install samtools::
    cp samtools bcftools/bcftools misc/* /usr/local/bin
 
 
-Install FRCAlign
+**FRCAlign**
 
 First::
 
@@ -51,7 +52,7 @@ Do::
 
 
 
-Install REAPR
+**REAPR**
 
 Do::
 
@@ -68,20 +69,20 @@ Do::
    ./install.sh
    ln -s /root/Reapr_1.0.16/reapr /usr/local/bin/reapr
 
-Python modules
+**Python modules**
 
 Do::
 
    pip install biopython
    pip install pysam
 
-Install R
+**Install R**
 
 Do::
 
    apt-get install r-base
 
-Install scaffoldgap2bed
+**scaffoldgap2bed**
 
 do::
 
@@ -89,7 +90,7 @@ do::
    curl -O https://raw.github.com/lexnederbragt/sequencetools/master/scaffoldgap2bed.py
    chmod 770 scaffoldgap2bed.py
 
-Download IPython notebook
+**An IPython notebook**
 
 do::
 
