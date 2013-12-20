@@ -7,9 +7,11 @@ Software
 
 You'll need khmer and its dependencies installed::
 
+   cd /root
    pip install -e git+https://github.com/ged-lab/khmer.git@kmer_error_profile#egg=khmer
    
-The khmer sandbox scripts are in `src/khmer/sandbox`.
+The khmer src (including sandbox scripts and data) will then be placed
+in `/root/src/khmer/`.
 
 If installing elsewhere you may need to modify `install [...]` to `install --user [...]`
 
@@ -88,7 +90,7 @@ Run::
    filter-abund.py C20.kh *.keep
    normalize-by-median.py -k 20 -C 5 -x 5e8 -N 4 *.keep.abundfilt
 
-   python /usr/local/share/khmer/sandbox/readstats.py *.keep.abundfilt.keep
+   python /root/src/khmer/sandbox/readstats.py *.keep.abundfilt.keep
 
 For this data, you should get::
 
@@ -202,8 +204,8 @@ First, let's do it for a small data set with interesting coverage::
    cd /mnt
    mkdir cover1
    cd cover1
-   load-into-counting.py -k 20 -x 1e8 -N 4 counts.kh /usr/local/share/khmer/data/stamps-reads.fa.gz
-   python /usr/local/share/khmer/sandbox/calc-median-distribution.py counts.kh /usr/local/share/khmer/data/stamps-reads.fa.gz reads.hist
+   load-into-counting.py -k 20 -x 1e8 -N 4 counts.kh /root/src/khmer/data/stamps-reads.fa.gz
+   python /root/src/khmer/sandbox/calc-median-distribution.py counts.kh /root/src/khmer/data/stamps-reads.fa.gz reads.hist
 
 The results are in '/mnt/cover1/reads.hist'.
 
@@ -216,7 +218,7 @@ Now try E. coli::
    mkdir cover2
    cd cover2
    load-into-counting.py -k 20 -x 1e9 -N 4 counts.kh ../ecoli_ref-5m.fastq.gz
-   python /usr/local/share/khmer/sandbox/calc-median-distribution.py counts.kh ../ecoli_ref-5m.fastq.gz reads.hist
+   python /root/src/khmer/sandbox/calc-median-distribution.py counts.kh ../ecoli_ref-5m.fastq.gz reads.hist
 
 The results are in '/mnt/cover2/reads.hist'.
 
@@ -244,8 +246,8 @@ Do::
    mkdir kmercov
    cd kmercov
 
-   load-into-counting.py -k 20 -x 1e7 -N 4 counts.kh /usr/local/share/khmer/data/stamps-reads.fa.gz
-   abundance-dist.py counts.kh /usr/local/share/khmer/data/stamps-genomes.fa counts.out
+   load-into-counting.py -k 20 -x 1e7 -N 4 counts.kh /root/src/khmer/data/stamps-reads.fa.gz
+   abundance-dist.py counts.kh /root/src/khmer/data/stamps-genomes.fa counts.out
 
 The results will be in '/mnt/kmercov/counts.out'.
 
@@ -258,7 +260,7 @@ Do::
    mkdir part
    cd part
 
-   do-partition.py -k 32 -x 1e7 -N 4 stamps /usr/local/share/khmer/data/stamps-reads.fa.gz
+   do-partition.py -k 32 -x 1e7 -N 4 stamps /root/src/khmer/data/stamps-reads.fa.gz
 
    extract-partitions.py -X 1000 stamps *.part
 
