@@ -100,6 +100,10 @@ Quality/completion metrics.
 
 What quality genome can I expect?
 
+QQ What's a good way to evaluate completeness?
+ - Mapping of reads.  High percentage is good, and tells you if there
+   is room for improvement.
+
 Sample prep
 -----------
 
