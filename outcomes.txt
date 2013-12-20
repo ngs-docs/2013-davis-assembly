@@ -1,0 +1,74 @@
+=================
+Possible outcomes
+=================
+
+Papers/opinion pieces/rundowns
+------------------------------
+
+One piece on assembling/improving "large" genomes (euk) -- Lex and Jared.
+
+One piece on metagenome assembly, esp scaling (Nick and Titus)
+ * Should I coassemble?
+ * completing an assembly reliably
+ * getting good strain/variant recovery (sensitivity)
+ * getting good/long/accurate contigs (actually ... questionable? in complex environments)
+ * 2014 might be the year of pacbio/moleculo long reads for metagenomics ("there is no genome ommmmm")
+
+One piece on what to think about *before* sequencing, and what to expect
+(Holly lead?)
+
+One piece on "Truths of assembly"
+ - More important to have good data than good assemblers
+ - Contamination (either at kit level, or at mixture level) is a fact of life
+
+----
+
+Other potential outputs (blog posts, papers, etc)
+-------------------------------------------------
+
+assembly-free evaluation technologies, review/discussion of
+- preqc
+- diginorm stuff
+
+good questions to ask - summary of workshop partitcipant questions (see :doc:`questions`)
+
+an up-to-date paper on assemblies/workflows
+
+pacbio metagenome HMP analysis
+
+benchmarking thoughts
+
+list of data sets!
+
+GENERATION of data sets/Eisen & Bik => standards
+
+web survey of tools 
+
+6 months OUTCOMES
+
+table of assemblers <-> citations or opinions on each
+
+one sentence of paragraph and/or "surprise" concepts from each participant
+
+a description of the axes of assembly improvement (genome, diploidy, etc.)
+ - scaling
+ - contiguity
+ - sensitivity/strain variation/diploid assembly
+
+---
+
+Quote:
+
+it would be very useful to have a synthesis of assembly approaches for
+metagenomics/non-model organisms and ways in which microbial
+ecologists might want to think about their data.  The list of
+questions to ask from the first day would be an excellent point of
+reference.
+
+Another output could be a 'call-to-arms' describing how the workshop
+was organized and the value of hands-on learning from the people who
+develop assembly software. Questions I am interested in are: did the
+instructors find value in this workshop? Did the 'students'? Are there
+plans for follow up with the students? Is the workshop content useful
+for those not at the workshop?  --- hard to assess, but the social
+media aspect seems to have generated a broader discussion.

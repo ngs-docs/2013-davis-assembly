@@ -103,8 +103,8 @@ which works out to::
 so the predicted genome size of E. coli is 6.6 Mbp.  Not too far off... the
 true answer is 4.5 Mbp.
 
-Looking at DN coverage
-~~~~~~~~~~~~~~~~~~~~~~
+Looking at diginorm coverage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, we need to install the `BWA aligner
 <http://bio-bwa.sourceforge.net/>`__::
