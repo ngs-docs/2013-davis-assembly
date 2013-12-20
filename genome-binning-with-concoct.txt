@@ -28,6 +28,10 @@ A complete walk-through is available here:
 
 https://github.com/BinPro/CONCOCT/blob/master/doc/complete_example.md
 
-A recent presentation by Chris Quince is available to "watch again" from Beatles and Bioinformatics at this link:
+A repository containing the input and output files for a simple, worked example is available here:
+
+https://github.com/BinPro/CONCOCT-test-data
+
+A recent presentation by Chris Quince on CONCOCT is available to "watch again" from Beatles and Bioinformatics at this link:
 
 http://www.youtube.com/watch?v=tSul_qDwvN4&t=1h15m32s
