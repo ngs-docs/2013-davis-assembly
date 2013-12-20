@@ -1,0 +1,37 @@
+Genome binning with CONCOCT
+---------------------------
+
+CONCOCT is automated genome binning software that can use coverage information across multiple samples, composition and paired-end linkage information.
+
+The manuscript describing the software is available on arXiv:
+
+   CONCOCT: Clustering cONtigs on COverage and ComposiTion
+   http://arxiv.org/abs/1312.4038
+
+The Github repository is here:
+
+   https://github.com/BinPro/CONCOCT/
+
+The basic steps are as follows:
+
+-  Generate a co-assembly from all the reads in your dataset (or a subset if too large)
+-  Map reads back on a per-sample basis to the contigs to generate coverage information
+-  Run CONCOCT to produce clusters
+-  (optionally) Link clusters with paired-end reads
+-  Evaluate results, e.g. using taxonomic assignments of contigs and presence of conserved genes in clusters
+
+To install CONCOCT, follow the instructions here:
+
+https://github.com/BinPro/CONCOCT
+
+A complete walk-through is available here:
+
+https://github.com/BinPro/CONCOCT/blob/master/doc/complete_example.md
+
+A repository containing the input and output files for a simple, worked example is available here:
+
+https://github.com/BinPro/CONCOCT-test-data
+
+A recent presentation by Chris Quince on CONCOCT is available to "watch again" from Beatles and Bioinformatics at this link:
+
+http://www.youtube.com/watch?v=tSul_qDwvN4&t=1h15m32s

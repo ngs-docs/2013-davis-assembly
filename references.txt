@@ -72,3 +72,18 @@ Q/A Resources
   http://www.biostars.org/
   
   http://seqanswers.com/
+
+Binning: Genomes from Metangenomes
+
+  CONCOCT: Clustering cONtigs on COverage and ComposiTion
+  http://arxiv.org/abs/1312.4038
+
+  Multi-metagenome scripts
+  http://madsalbertsen.github.io/multi-metagenome/
+
+  Genome sequences of rare, uncultured bacteria obtained by differential coverage binning of multiple metagenomes
+  http://www.nature.com/nbt/journal/v31/n6/full/nbt.2579.html
+
+  The human gut and groundwater harbor non-photosynthetic bacteria belonging to a new candidate phylum sibling to Cyanobacteria
+  http://elife.elifesciences.org/content/2/e01102
+

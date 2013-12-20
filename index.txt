@@ -23,6 +23,7 @@ Jared Simpson.
    lex-notes
    blobology
    pacbio
+   genome-binning-with-concoct
 
 Other references:
 -----------------
