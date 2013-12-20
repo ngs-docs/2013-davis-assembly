@@ -1,0 +1,79 @@
+================================
+Questions asked by the attendees
+================================
+
+How to deal with "mixed assemblies" (e.g. an endosymbiont). Better 
+to filter reads or contigs? Does presence of other sequences 
+compromise assembly?
+
+Do we care about the difference between a 150 contig and a 100
+contig assembly? What about 10 or 1000 contigs?
+
+How does metagenomic assembly not collapse information from 
+homologs between strains/species?
+
+How really bad is Nextera (insertion bias and dual 
+mode insert size) compared to TruSeq?
+
+How much is it worth striving for PCR-free library preps to avoid 
+amplification bias?
+
+At what read length should we be moving towards OLC assemblers 
+instead of De Bruijn?
+
+How to assemble genomes from "messy" samples (non-clean tissue,
+data more like a metagenome)?  How can we separate out potential
+symbionts and/or secondarily abundant microbes?
+
+What are the best tools (assemblers) and workflows for Eukaryote
+assemblies? Do they differ according to predicted genome size (80Mb
+nematodes vs. 1GB euk)
+
+How different are the workflows aimed at metagenome (gene contigs)
+vs. whole-genome assembly?
+
+Identify correct next gen sequencing platform!
+
+Develop scalable, cloud based data analysis and visualization pipeline
+
+Metagenomics - what can one expect to find based on coverage depth?
+
+How should cores be run?  Tradeoff between hands
+on/teaching/admin/config/ contracting?
+
+- Guided vs Mapped vs Denovo 
+  assemblies
+- How to deal with contamination?
+- Can you salvage a run without 
+  enough data?
+- Can we still use bad quality data?
+- Quality/completion metrics.
+
+Remove endosymbiont (i.e. Wolbachia) reads from fly and butterfly
+data, and assemble genome; compare m/f expression levels in D. suzuki
+
+- alpha-diversity
+- beta-diversity
+- Key taxa at multiple taxonomic levels
+- Functional genes for a variety of pathways
+
+- How large is the genome?
+- How closely related are my insects?
+- What quality genome can I expect?
+- What do I need to do to improve genome quality?
+- Will inbreeding be useful or necessary?
+
+- How to assemble, call for SNPs, compare genetic  elements.
+- How to assemble Eukaryotes??
+
+Seq indiv to chromosomes or at least meaningful 
+synteny maps? (inversions)
+
+- Hybrid needed? What prep? 
+- WGA for MP lib OK?
+- Make references?
+- Iteratively improve ref with new sequences?
+- Make pop specific "type" refs?
+- What exactly is "finishing"
+- Bias when doing mapping vs de novo?
+
