@@ -79,3 +79,24 @@ on multiple machines, e.g.:
 For more command-line options, see:
 
 https://github.com/sebhtml/ray/blob/master/MANUAL\_PAGE.txt
+
+Ray Cloud Browser
+~~~~~~~~~~~~~~~~~
+
+Here is a useful script to set up Ray Cloud Browser from a kmers.txt and Contigs.fasta file:
+
+::
+
+    #!/bin/bash
+    tag=$1
+    kmerfile=$2
+    contigfile=$3
+    mapid=$4
+    sectionid=$5
+
+    RayCloudBrowser-client create-map $kmerfile $tag.dat
+    RayCloudBrowser-client add-map config.json "$tag" $tag.dat
+    RayCloudBrowser-client create-section $contigfile $tag-contigs.dat
+    RayCloudBrowser-client create-map-annotations-with-section $tag.dat $tag-contigs.dat $sectionid
+    RayCloudBrowser-client add-section config.json $mapid "$tag Contigs" $tag-contigs.dat
+
