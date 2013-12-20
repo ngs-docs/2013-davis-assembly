@@ -27,8 +27,8 @@ Other potential outputs (blog posts, papers, etc)
 -------------------------------------------------
 
 assembly-free evaluation technologies, review/discussion of
-- preqc
-- diginorm stuff
+ - preqc
+ - diginorm stuff
 
 good questions to ask - summary of workshop partitcipant questions (see :doc:`questions`)
 
