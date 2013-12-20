@@ -28,8 +28,6 @@ A complete walk-through is available here:
 
 https://github.com/BinPro/CONCOCT/blob/master/doc/complete_example.md
 
-https://github.com/sujaikumar/assemblage
-
 A recent presentation by Chris Quince is available to "watch again" from Beatles and Bioinformatics at this link:
 
 http://www.youtube.com/watch?v=tSul_qDwvN4&t=1h15m32s
