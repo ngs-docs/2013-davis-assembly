@@ -29,15 +29,23 @@ Technology choice
 
 At what read length should we be moving towards OLC assemblers 
 instead of De Bruijn?
+ - no obvious answer; further investigation needed
+ - 500-1kb probably (JTS)
 
 What are the best tools (assemblers) and workflows for Eukaryote
 assemblies? Do they differ according to predicted genome size (80Mb
 nematodes vs. 1GB euk)
+ - see table
 
 How different are the workflows aimed at metagenome (gene contigs)
 vs. whole-genome assembly?
+ - different assemblers may be useful; scale may be different; in table.
+ - note that contamination is increasingly endemic
+ - tools before and after assembly are very similar
 
 Develop scalable, cloud based data analysis and visualization pipeline
+ - sorta, khmer-protocols etc.
+ - visualization is still lacking although igv, ray browser
 
 Metagenomes and other mixtures
 ------------------------------
@@ -45,70 +53,132 @@ Metagenomes and other mixtures
 How to deal with "mixed assemblies" (e.g. an endosymbiont). Better 
 to filter reads or contigs? Does presence of other sequences 
 compromise assembly?
+ - blobology shows you the problems
+ - different coverage levels may mislead single-genome assemblers
+ - better to filter contigs because of specificity, if you get the
+   contigs :)
+ - if lots of contamination, spades/diginorm/binning/etc. may be
+   useful
 
 How to assemble genomes from "messy" samples (non-clean tissue,
 data more like a metagenome)?  How can we separate out potential
 symbionts and/or secondarily abundant microbes?
+ - see above
 
 How does metagenomic assembly not collapse information from 
 homologs between strains/species?
+ - very situation/data specific
 
 What can one expect to find based on coverage depth?
+ - preqc (and eventually khmer) may help diagnose low coverage, 
+     high errors
+ - argument mihai pop (cite?) about doing a little exploratory
+   sequencing then designing next round of libraries based on
+   repeat content
 
 How to deal with contamination?
+ - see above.
+ - concoct etc.
+ - kitomics; is there a simple way to remove kit fingerprint? (no.)
+ - this is a need.
+ - do your negative controls thoroughly, folk
 
 Remove endosymbiont (i.e. Wolbachia) reads from fly and butterfly
 data.
+ - see above. no standard protocol.
 
 From shotgun data:
 - alpha-diversity
+  * phylosift or other??
 - beta-diversity
+  * phylosift or other
 - Key taxa at multiple taxonomic levels
+  * phylosift or other
 - Functional genes for a variety of pathways
-
+  * phylosift cures all (WebMGA is also good)
+  * MG-rAST pretends
+  * HUMANn
 
 Genome assembly
 ---------------
 
 How closely related are my insects?
+ - probably, very.  This is really a genotyping question...?
+ - can do with k-mer distributions (JTS?)
+ - but this is complicated and not necessarily easy
+
 Will inbreeding be useful or necessary?
+ - useful, but not necessary (just more $$ sequencing)
 
 Seq indiv to chromosomes or at least meaningful 
 synteny maps? (inversions)
+ - see table of sequencing approaches;
+ - optical maps, linkage maps, PacBio
 
 - How to assemble Eukaryotes??
+ * see table
 - Hybrid needed? What prep? 
+ * see table
 - WGA for MP lib OK?
-- Make references?
-- Iteratively improve ref with new sequences?
+ * try to avoid
+- Make references? (Should we make strain/haplotype-specific references)
+ * "ancestral graph reconstruction" theory
+ * tools needed to make a reference graph
+- Iteratively improve reference genome with new sequences?
+ * can be done; no strong recommendation.  Depends on the sequence
+   data you have.  (PBJelly with PacBio, GAA for merging assemblies,
+   etc.) Talk to Titus because he has funding to do this on chicken.
 - Make pop specific "type" refs?
+ * see above, 'make references'
 - What exactly is "finishing"
+ * No one wanted to answer, no one does it.
+ * No such thing as a "finished" genome
 - Bias when doing mapping vs de novo?
+ * There is allele-specific mapping bias.  (For RNAseq, Wittkopp
+   reference)
 
 Assembly outcomes, metrics & evaluation
 ---------------------------------------
 
 Do we care about the difference between a 150 contig and a 100
 contig assembly? What about 10 or 1000 contigs?
+ - depends on your question
+ - will be limited by your data, requires careful planning; see
+   15-17 commandments
 
 - How large is the genome?
+ * preqc can tell you this, khmer can estimate badly
 - What do I need to do to improve genome quality?
+ * more or less the topic of this entire workshop
 
 Can we still use bad quality data?
+ * all data is bad quality data, so, yes
+ * limits your conclusions.  It's called Science, folks.
+ * if data is randomly bad, OK; if it's unknown systematic error, then more is worse.
 
 Quality/completion metrics.
+ * see "finishing", above.
+ * reads mapped back; marker genes; cegma; reapr; frcbam; visual
+   inspection; bridgemapper
 
 What quality genome can I expect?
+ * preqc can help tell you this; don't do wheat, soil, or fish.
 
-QQ What's a good way to evaluate completeness?
+What's a good way to evaluate completeness?
  - Mapping of reads.  High percentage is good, and tells you if there
    is room for improvement.
+ - "treat your assembly as a hypothesis and see how well your reads
+   match"
+ - bring in orthogonal evidence (see Lex's list)
 
 Sample prep
 -----------
 
 How really bad is Nextera (insertion bias and dual 
 mode insert size) compared to TruSeq?
+ * you just need to be aware that Nextera is messy in different ways
+ * we want Nick to write a blog post
 
 How much is it worth striving for PCR-free library preps to avoid 
-amplification bias?
+amplification bias? and/or single-molecule sequencing?
+ * 
