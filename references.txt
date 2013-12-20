@@ -83,7 +83,13 @@ Binning: Genomes from Metangenomes
 
   Genome sequences of rare, uncultured bacteria obtained by differential coverage binning of multiple metagenomes
   http://www.nature.com/nbt/journal/v31/n6/full/nbt.2579.html
+  Also see presentation slides here:
+  http://www.slideshare.net/MadsAlbertsen/20131202-mads-albertsen-extracting-genomes-from-metagenomes
 
   The human gut and groundwater harbor non-photosynthetic bacteria belonging to a new candidate phylum sibling to Cyanobacteria
   http://elife.elifesciences.org/content/2/e01102
+
+  Time series community genomics analysis reveals rapid shifts in bacterial species, strains, and phage during infant gut colonization
+  http://genome.cshlp.org/content/23/1/111.full
+  
 
