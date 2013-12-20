@@ -77,3 +77,11 @@ synteny maps? (inversions)
 - What exactly is "finishing"
 - Bias when doing mapping vs de novo?
 
+---
+
+Should assembly workflows for complex metagenomes with a large fraction of
+eukaryotes use metagenome tools or euk tools?
+
+Or, perhaps which steps in a workflow for complex metagenomes with a large
+fraction of eukaryotes should use euk tools and which steps should use
+metagenomic tools?
