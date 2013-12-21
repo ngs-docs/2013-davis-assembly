@@ -6,6 +6,7 @@ Papers/opinion pieces/rundowns
 ------------------------------
 
 One piece on assembling/improving "large" genomes (euk) -- Lex and Jared.
+ - mrc
 
 One piece on metagenome assembly, esp scaling (Nick and Titus)
  * Should I coassemble?
@@ -42,7 +43,7 @@ list of data sets!
 
 GENERATION of data sets/Eisen & Bik => standards
 
-web survey of tools 
+web survey of tools ==> Twitter survey
 
 6 months OUTCOMES
 

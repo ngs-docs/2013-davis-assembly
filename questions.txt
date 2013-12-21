@@ -6,23 +6,37 @@ General/unclassified
 --------------------
 
 Identify correct next gen sequencing platform!
+ "it's complicated"
 
 How do I assemble, call for SNPs, compare genetic elements?
+ see list for assemblers; not covered but interesting (mapping vs
+ graph-based like SGA, Cortex, ??); mummer & mauve
 
 Guided vs Mapped vs Denovo assemblies
+ - nobody likes guided assemblies, apparently.
 
 Can you salvage a run without enough data?
+ - define "salvage"
+ - you can use low amounts of data to develop strategy but you need
+   more data
 
 Compare m/f expression levels in D. suzuki.
+ - not covered
 
 Should assembly workflows for complex metagenomes with a large
 fraction of eukaryotes use metagenome tools or euk tools? Or, perhaps
 which steps in a workflow for complex metagenomes with a large
 fraction of eukaryotes should use euk tools and which steps should use
 metagenomic tools?
+ - different assemblers but read QC, etc. is fairly similar
+ - different expectations
+ - see tables
 
-What and how much should cores support? Standard protocols, basic software
-install, hands on consultation, ???
+What and how much should cores support? Standard protocols, basic
+software install, hands on consultation, ???
+ - it's a spectrum
+ - your core may have specialties in terms of sample prep
+ - mate pair libraries need experienced cores
 
 Technology choice
 -----------------
@@ -178,7 +192,35 @@ How really bad is Nextera (insertion bias and dual
 mode insert size) compared to TruSeq?
  * you just need to be aware that Nextera is messy in different ways
  * we want Nick to write a blog post
+ * Nextera is cheaper and easier, but has insertion bias and req PCR
+ * high GC organisms worse with Nextera, and Illumina overall
 
 How much is it worth striving for PCR-free library preps to avoid 
-amplification bias? and/or single-molecule sequencing?
- * 
+amplification bias? and/or going for single-molecule sequencing?
+ * depends on details: GC, your question, amount of DNA, and whether
+   you want to attach gold molecules to each sample
+
+Predicting the future
+---------------------
+
+It is hard to predict things, especially the future.
+ - Niels Bohr
+
+predictions:
+ - @ryneches: by Dec 31, 2015, Illumina reads will be longer than
+   Sanger reads ever were. (> 1kb)
+ - @arturgreensward: by Dec 31, 2015, PacBio will be the only thing
+   used to sequence bacterial genomes
+ - @pathogenomenick: by Dec 31, 2014, there will be two Nanopore
+   platforms usefully available
+ - OH: by Dec 31, 2013, Mick will ask for an embargo
+   on new assemblers
+ - @lexnederbragt: 2014-2015, diploid aware assemblers will emerge
+ - @pathogenomenick: by end of 2015, graph based variant calling will
+   be default
+ - @ryneches: by 2016, computation will be considerably more expensive
+   than sequencing
+ - @ctitusbrown: by 2016, the field will have solved the expensive
+   computation problem and > 50% of non-biomedical computational
+   analysis will be a commodity service (although it may not be
+   a particularly good commodity service)
