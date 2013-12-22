@@ -19,8 +19,25 @@
 {##################################################}
 
 {% block footer %}
-{{ super() }}
+  <hr>
+<font size="-1"><b>LICENSE:</b>
+This documentation and all textual/graphic site content is licensed
+under the <a href='http://creativecommons.org/publicdomain/zero/1.0/'>
+Creative Commons - 0 License
+(CC0)</a> -- <a href='https://github.com/ngs-docs/2013-davis-assembly'>fork @
+github</a>.  Presentations (PPT/PDF) and PDFs are the property of
+their respective owners and are under the terms indicated within the
+presentation.
+<p>
+Development and posting of this material, and the associated workshop,
+were supported by Grant Number R25HG006243 from the National Human
+Genome Research Institute and an NSF OCI supplement to NSF
+DBI-0939454.</font>
 
+  <hr>
+
+
+{{ super() }}
 {# Add plone-derived 'edit me' sticky note #}
 {% if github_base_account %}
 <div id="editor-trap">
@@ -64,7 +81,7 @@
       </p>
 
   </div>
-
+<p>
 {% endif %}
 
 <script type="text/javascript">
@@ -88,6 +105,18 @@
 {#########################}
 
 {% macro comments() %}
+
+  <hr>
+<font size="-1"><b>LICENSE:</b>
+This documentation and all textual/graphic site content is licensed
+under the <a href='http://creativecommons.org/publicdomain/zero/1.0/'>
+Creative Commons - 0 License
+(CC0)</a> -- <a href='https://github.com/ngs-docs/edda'>fork @
+github</a>.  Presentations (PPT/PDF) and PDFs are the property of
+their respective owners and are under the terms indicated within the
+presentation.</font>
+
+  <hr>
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">
