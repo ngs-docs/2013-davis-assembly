@@ -1,0 +1,26 @@
+===========
+Predictions
+===========
+
+It is hard to predict things, especially the future.
+ - Niels Bohr
+
+Predictions:
+
+ - @ryneches: by Dec 31, 2015, Illumina reads will be longer than
+   Sanger reads ever were. (> 1kb)
+ - @arturgreensward: by Dec 31, 2015, PacBio will be the only thing
+   used to sequence bacterial genomes
+ - @pathogenomenick: by Dec 31, 2014, there will be two Nanopore
+   platforms usefully available
+ - OH: by Dec 31, 2013, Mick will ask for an embargo
+   on new assemblers
+ - @lexnederbragt: 2014-2015, diploid aware assemblers will emerge
+ - @pathogenomenick: by end of 2015, graph based variant calling will
+   be default
+ - @ryneches: by 2016, computation will be considerably more expensive
+   than sequencing
+ - @ctitusbrown: by 2016, the field will have solved the expensive
+   computation problem and > 50% of non-biomedical computational
+   analysis will be a commodity service (although it may not be
+   a particularly good commodity service)

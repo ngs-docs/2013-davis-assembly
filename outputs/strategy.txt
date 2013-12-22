@@ -1,0 +1,20 @@
+Thoughts on sequencing strategy
+===============================
+
+Lex Nederbragt (corr) et al.
+
+When setting up a strategy for sequencing/assembly these are valuable to know:
+
+* the goal of the project, e.g.
+ - gene-mining
+ - presence/absence of genes
+ - long scaffolds for synteny
+ - reference genome-standard (whatever that is)
+ - strain variation/haplotying
+* genome size
+* genome complexity, i.e. repeat content and level of heterozygosity
+* number of chromosomes, extrachromosomal elements
+* can a pure sample be obtained or will there be contaminating DNA?
+* how much DNA can be obtained from a single individual/clonal line or will it be necessary to use DNA from a mix of different individuals (read: different genomes)?
+* is there sequencing data available from the same individual or species?
+* how close is the most closely related reference genome?

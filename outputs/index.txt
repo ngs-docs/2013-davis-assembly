@@ -1,0 +1,12 @@
+=================
+#UCD -- Assemble!
+=================
+
+.. toctree::
+
+   opinionated-guide
+   commandments
+   good-practices
+   strategy
+   questions-and-answers
+   predictions

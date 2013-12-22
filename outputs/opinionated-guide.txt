@@ -1,0 +1,12 @@
+================================================
+The Opinionated Guide to Sequencing and Assembly
+================================================
+
+Authors: Holly Bik, C. Titus Brown, Nick Loman, Lex Nederbragt, and
+Jared Simpson
+
+Expiration date: 6/1/2014.
+
+
+
+

@@ -1,0 +1,20 @@
+The 10+ Commandments of Assembly
+================================
+
+Nick Loman (corr), et al.
+
+1. Do I really need to assemble?
+2. Good data is more important than choice of assembler.
+3. Have a specific goal.
+4. An assembly is a hypothesis to be tested.
+5. Assembly programs are not haplotype aware.
+6. More data may help.
+7. If you haven't found contamination in your data you haven't looked hard enough.
+8. A different assembler may help.
+9. Make sure the assembly agrees with the reads that were used to put it together.
+10. N50 is not a measure of quality.
+11. But we don’t have a measure of quality.
+12. Avoid: Wheat, Fish, and Soil.
+13. Trust contigs more than scaffolds more than gap filling.
+14. The answer to your question may not be in your data.
+15. A bad assembly that completes, is better than a good assembly that doesn't.
