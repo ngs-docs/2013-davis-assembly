@@ -1,0 +1,89 @@
+**(Meta)genome**
+**Goal**
+**Dataset**
+**Assembly strategy**
+
+Bacteria
+(Near) completion
+PacBio 100x
+HGAP/Celera
+
+Bacteria
+Draft few contigs
+Ilmn Nextera/TruSeq PE 2x250 c50x + Nextera MP 5kbp c50x
+SPADES/MIRA
+
+Bacteria
+Draft 10s - 100(s) of contigs
+Ilmn Nextera/TruSeq PE 2x250 c50x
+SPADES/A5/MIRA
+
+Small eukaryote up to 100 Mbp
+contigs
+Ilmn Nextera/TruSeq PE 2x250 c50x
+SOAPdenovo, MIRA, SGA 
+
+Small eukaryote up to 100 Mbp
+scaffolds
+Ilmn Nextera/TruSeq PE 2x250 c50x + Nextera MP 3-10kbp c50x (each)
+Optional: PacBio
+SOAPdenovo, MIRA, SGA (ALLPATHS_LG with right libraries) PBJelly and/or AHA
+
+Eukaryote 100-500 Mbp
+contigs
+Ilmn Nextera/TruSeq PE 2x250 c50x
+SOAPdenovo, SGA
+
+Eukaryote 100-500 Mbp
+scaffolds
+Ilmn Nextera/TruSeq PE 2x250 MiSeq OR 2x150 HiSeq c50x;
+optional: multiple fr. lengths;
+Nextera MP 3-10kbp c50x (each);
+Optional: PacBio
+SOAPdenovo, SGA, MaSuRCA, CA, Abyss (ALLPATHS_LG with right libraries) PBJelly and/or AHA
+
+Eukaryotes over 500
+contigs / non-repetitive components
+Ilmn Nextera/TruSeq PE 2x250 MiSeq OR 2x150 HiSeq c50x
+SOAPdenovo, SGA, diginorm + velvet
+
+Eukaryotes over 500
+scaffolds
+as for 100-500 Mpb
+add more library types
+SOAPdenovo, SGA, MaSuRCA, CA, Abyss (ALLPATHS_LG with right libraries) PBJelly and/or AHA
+
+Metagenome low diversity (2-50 "species")
+Diversity estimates, gene mining
+Ilmn Nextera/TruSeq PE 2x150 HiSeq (tip: long insert)
+IDBA-UD, SPADES, MIRA
+
+Metagenome low diversity (2-50 "species")
+Complete genomes
+PacBio or Moleculo
+IDBA-UD, diginorm + velvet/SGA, Ray
+
+Metagenome medium diversity (50-500 "species")
+Diversity estimates, gene mining
+Ilmn Nextera/TruSeq PE 2x150 HiSeq (tip: long insert)
+IDBA-UD, diginorm + velvet/SGA, Ray
+
+Metagenome high-diversity (e.g. soil, sediment)
+Diversity estimates, gene mining
+Ilmn Nextera/TruSeq PE 2x150 HiSeq (tip: long insert)
+diginorm + velvet/SGA
+
+Single-cell genome bacterial
+Partial genome
+Ilmn Nextera/TruSeq PE 2x250 c50x
+SPADES
+
+Single-cell genome eukaryote (protist)
+Partial genome
+Ilmn Nextera/TruSeq PE 2x250 c50x
+SPADES?, diginorm + velvet/SGA/
+
+RNA-seq
+De novo transcriptome
+Ilmn TruSeq/Nextera PE 2x100 HiSeq. 50 - 100 million reads per tissue, 300-500 bp fragment
+Trinity
