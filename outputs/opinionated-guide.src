@@ -73,6 +73,11 @@ Diversity estimates, gene mining
 Ilmn Nextera/TruSeq PE 2x150 HiSeq (tip: long insert)
 diginorm + velvet/SGA
 
+Metatranscriptome
+Expression, gene mining
+Ilmn Nextera/TruSeq PE 2x150 HiSeq
+diginorm + velvet/SGA, Ray?
+
 Single-cell genome bacterial
 Partial genome
 Ilmn Nextera/TruSeq PE 2x250 c50x

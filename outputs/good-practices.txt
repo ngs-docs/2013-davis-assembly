@@ -1,5 +1,5 @@
-Our (?) list of good practices in (meta)genome assembly
-=======================================================
+Our list of good practices in (meta)genome assembly
+===================================================
 
 Lex Nederbragt (corr) et al.
 
@@ -8,10 +8,10 @@ Lex Nederbragt (corr) et al.
 * try different programs for assembly (not too many, but more than one)
 * map the reads back to the assembly and use QC/Validation programs
 * Use orthogonal data for QC/Validation
-* known genes
-* CEGMA/Phylosift
-* RNA-seq data
-* linkage map data/optical mapping data/fosmids or BAC data
+  * known genes
+  * CEGMA/Phylosift
+  * RNA-seq data
+  * linkage map data/optical mapping data/fosmids or BAC data
 * do blobology to figure out what you actually assembled (for any genome/metagenome)
 * make reads, mapped reads and validation results available upon release of the genome (or before)
 * make the genome assembly work reproducible
