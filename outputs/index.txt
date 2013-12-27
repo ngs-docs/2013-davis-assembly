@@ -1,6 +1,8 @@
-=================
-#UCD -- Assemble!
-=================
+=========================
+#UCD -- Assemble! Outputs
+=========================
+
+See :doc:`../index` for more information on this workshop.
 
 .. toctree::
 

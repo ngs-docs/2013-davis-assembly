@@ -1,8 +1,10 @@
-==================================
-2013 UC Davis Assembly Masterclass
-==================================
+=============================================
+2013 UC Davis Assembly Masterclass - homepage
+=============================================
 
 Notes and materials from `Davis Masterclass on assembly <http://ivory.idyll.org/blog/2013-assembly-masterclass.html>`__ and the associated `PacBio sequence assembly workshop <http://phylogenomics.wordpress.com/2013/12/11/pacbio-sequence-assembly-workshop/>`__.
+
+Please see :doc:`outputs/index` for our summary outputs!
 
 Authors: Holly Bik, C. Titus Brown, Nick Loman, Lex Nederbragt, and
 Jared Simpson.
@@ -24,6 +26,7 @@ Jared Simpson.
    blobology
    pacbio
    genome-binning-with-concoct
+   outputs/index
 
 Other references:
 -----------------
