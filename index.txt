@@ -4,10 +4,12 @@
 
 Notes and materials from `Davis Masterclass on assembly <http://ivory.idyll.org/blog/2013-assembly-masterclass.html>`__ and the associated `PacBio sequence assembly workshop <http://phylogenomics.wordpress.com/2013/12/11/pacbio-sequence-assembly-workshop/>`__.
 
-Please see :doc:`outputs/index` for our summary outputs!
-
 Authors: Holly Bik, C. Titus Brown, Nick Loman, Lex Nederbragt, and
 Jared Simpson.
+
+Please see :doc:`outputs/index` for our summary outputs!
+
+----
 
 `Schedule <https://docs.google.com/document/d/1L0vdxQAYpm03RLj8jpZAOJ2PtPZK0aBZrJFgqvLlGEQ/edit>`__
 
